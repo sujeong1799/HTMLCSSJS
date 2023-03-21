@@ -1,0 +1,93 @@
+package day10;
+
+public class 클래스06 {
+
+	public static void main(String[] args) {
+		/* final은 클래스, 변수, 메서드에 붙일 수 있다.
+		 * final : 수정할 수 없다.
+		 * final 멤버 변수 : 상수
+		 * final 멤버 메서드 : 오버라이딩을 할 수 없다.
+		 * final 클래스 : 상속 할 수 없다. 부모 클래스가 될 수 없다.
+		 * 
+		 * 
+		 * */
+		
+		EzenStudent Ezen = new EzenStudent("인천", "홍길동", "JAVA", "01012345678");
+		Ezen.Print();
+		
+		Ezen.setName("김코난");
+		Ezen.Print();
+		
+		Ezen.setNumber("01011112222");
+		Ezen.setPlace("안산");
+		Ezen.setGroup("spring");
+		Ezen.Print();
+	}
+
+}
+
+//멤버변수 : 지점, 이름, (수업듣는/수강을 원하는)반, 전화번호
+//메서드 : 출력 (toString, sysout 둘 다 가능)
+class EzenStudent{
+	
+	private String place;
+	private String name;
+	private String group;
+	private String number;
+	
+	public EzenStudent() {}
+	
+
+	public EzenStudent(String place, String name, String group, String number) {
+		super();
+		this.place = place;
+		this.name = name;
+		this.group = group;
+		this.number = number;
+	}
+
+	public void Print() {
+		System.out.println("-----Ezen-----");
+		System.out.println(place);
+		System.out.println(name);
+		System.out.println(group);
+		System.out.println(number);
+		
+	}
+
+
+	public String getPlace() {
+		return place;
+	}
+
+	public void setPlace(String place) {
+		this.place = place;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getGroup() {
+		return group;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
+	}
+
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
+	
+
+	
+}

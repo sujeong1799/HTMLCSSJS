@@ -1,0 +1,27 @@
+package day10;
+
+import java.util.Scanner;
+
+public class ProductMain {
+
+	public static void main(String[] args) {
+		
+		
+		Product p = new Product();
+		
+		Scanner scan = new Scanner(System.in);
+		
+		
+		
+		while(true) {
+		System.out.println("상품을 등록하시겠습니까? (y/n)");
+		String input = scan.next();
+		
+		if(input=="y") {
+			
+		}
+		
+		}
+	}
+
+}

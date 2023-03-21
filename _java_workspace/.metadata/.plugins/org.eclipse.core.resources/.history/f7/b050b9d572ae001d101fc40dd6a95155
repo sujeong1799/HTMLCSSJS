@@ -1,0 +1,29 @@
+package day14;
+
+import java.util.HashSet;
+import java.util.Random;
+
+public class SetEx01 {
+
+	public static void main(String[] args) {
+		// 로또 번호 출력 : set
+		// random으로 생성 1~45까지 총 6개
+		
+		//Math 클래스에서 제공하는 random메서드 사용
+//		int a = (int)(Math.random()*45)+1;
+		
+		//random클래스 사용하는 방법
+		
+		HashSet<Integer> set = new HashSet<Integer>();
+		int size = 6;
+		while(set.size()<size) {
+			int b = new Random().nextInt(45)+1;
+			set.add(b);
+		}
+		
+		System.out.println("오늘의 번호 :"+set);
+
+	}
+	
+
+}

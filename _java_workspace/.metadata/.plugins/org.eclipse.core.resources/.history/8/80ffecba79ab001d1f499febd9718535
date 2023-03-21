@@ -1,0 +1,49 @@
+package day10;
+
+import java.util.Scanner;
+
+import day09.Card;
+
+public class ProductMain {
+
+	public static void main(String[] args) {
+		String[] name = new String[10];
+		String[] price = new String[10];
+		char in;
+		int cnt=0;
+		Product p = new Product();
+		
+		Scanner scan = new Scanner(System.in);
+
+		
+		
+		while(true) {
+			System.out.println("상품을 등록하시겠습니까? (y/n)");
+			in = scan.next().charAt(0);
+			
+		
+			for(int i = 0; i<10; i++) {
+				if(in=='y') {
+					System.out.println("상품 이름을 입력해주세요.");
+						name[i] = scan.next();
+					
+					System.out.println("상품 가격을 입력해주세요.");
+							price[i] = scan.next();
+					}
+
+				
+					if(in=='n') {
+						System.out.println("상품등록을 종료합니다.");
+						break;	
+					}
+
+				
+			}
+					
+		}
+		
+		
+		
+	}
+	
+}

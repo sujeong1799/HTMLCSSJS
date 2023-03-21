@@ -1,0 +1,37 @@
+package day13;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class test {
+
+		public static void main(String[] args) {
+			/* 단어장 
+			 * 
+			 * 단어:의미 => hello : 안녕
+			 * 
+			 * 5개의 단어를 입력하고, 단어장을 출력하세요
+			 * */
+
+			HashMap<String, String> map = new HashMap();
+			map.put("새 청바지", "NewJeans");
+			map.put("게임", "game");
+			map.put("버스", "bus");
+			map.put("피자", "pizza");
+			map.put("진폐증", "Pneumonoultramicroscopicsilicovolcanoconiosis");
+			
+			System.out.println(map.keySet());
+			
+			for(String tmp : map.keySet()) {
+			Scanner scan = new Scanner(System.in);
+			System.out.println("영어 단어를 맞춰보세유");
+			String input = scan.next();
+				
+			System.out.println(map.get(tmp));
+				
+				
+			}
+		}
+	}
+
+

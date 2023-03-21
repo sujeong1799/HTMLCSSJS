@@ -1,0 +1,32 @@
+package day13;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class List01 {
+
+	public static void main(String[] args) {
+		/* 하루 일과를 저장하는 list <String>으로 생성
+		 * */
+		
+		ArrayList<String> Mylist = new ArrayList<String>(); 
+		
+		Mylist.add("일어나기");
+		Mylist.add("학원가기");
+		Mylist.add("공부하기ㅡㅡ");
+		Mylist.add("맛.있.는 점심 묵기^ㅇ^");
+		Mylist.add("과제.. 나머지 안돼!");
+		Mylist.add("집가기");
+		Mylist.add("복습하기");
+		Mylist.add("나만의 시간ㅋ");
+		Mylist.add("울면서 자기");
+		
+		System.out.println(Mylist);
+		
+		System.out.println(Mylist.get(4));
+		System.out.println(Mylist.set(1, "버스타고 학원가기 끼약"));
+		System.out.println(Mylist);
+
+	}
+
+}

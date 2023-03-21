@@ -1,0 +1,35 @@
+package day10;
+
+public class maintset {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[] group = new String[5];
+		String[] month = new String[5];
+		
+		EzenComputer ez = new EzenComputer();
+		ez.setName("홍길동");
+		ez.setDatebirth("010101");
+		ez.setAge(40);
+		ez.setNumber("01000001111");
+		ez.studentPrint();
+		
+		ez.ezenPrint();
+		ez.setPlace("인천");
+		ez.ezenPrint();
+		
+		ez.addGroup("JAVA(6개월)");
+		ez.groupPrint();
+		ez.addGroup("DB(2개월)");
+		ez.addGroup("html(1개월)");
+		ez.addGroup("컴활(5개월)");
+		ez.groupPrint();
+		
+		
+		EzenComputer ez1 = new EzenComputer("김땡이","020202",20,"01001011010","안산");
+		ez.studentPrint();
+		ez.groupPrint();
+		ez.ezenPrint();
+	}
+
+}

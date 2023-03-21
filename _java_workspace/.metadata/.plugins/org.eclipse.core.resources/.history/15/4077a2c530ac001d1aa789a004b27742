@@ -1,0 +1,27 @@
+package day11;
+
+public class CustomerMain {
+
+	public static void main(String[] args) {
+		
+		Customer a = new Customer();
+		a.setCustomerID(00020);
+		a.setCustomerName("홍");
+		a.calcPrice(20000);
+		a.customerInfo();
+		
+		GoldCustomer c = new GoldCustomer();
+		c.setCustomerID(00010);
+		c.setCustomerName("홍길동");
+		c.calcPrice(20000);
+		c.customerInfo();
+		
+		
+		VIPCustomer v = new VIPCustomer();
+		v.setCustomerID(00030);
+		v.setCustomerName("홍이");
+		v.calcPrice(20000);
+		v.customerInfo();
+	}
+
+}

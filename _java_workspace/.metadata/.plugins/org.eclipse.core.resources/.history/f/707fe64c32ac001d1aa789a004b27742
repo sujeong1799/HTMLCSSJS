@@ -1,0 +1,26 @@
+package day11;
+
+public class GoldCustomer extends Customer {
+
+		
+		
+
+		public GoldCustomer() {
+			super.customerGrade = "Gold";
+			super.bonusRatio = 0.02;
+			disCount = 0.9;
+		}
+
+
+		public int calcPrice(int price) {
+			bonusPoint = (int)(price * bonusRatio);
+			int result = (int)(price*disCount); 
+			return result;
+		}
+
+
+		
+		
+		
+}
+

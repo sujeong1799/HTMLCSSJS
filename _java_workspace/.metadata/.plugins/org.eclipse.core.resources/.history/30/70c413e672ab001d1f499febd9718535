@@ -1,0 +1,19 @@
+package day10;
+
+import java.util.Scanner;
+
+public class ProductMain {
+
+	public static void main(String[] args) {
+		
+		
+//		day
+//		
+//		Scanner scan = new Scanner(System.in);
+//		String input = scan.next();
+		
+		
+
+	}
+
+}

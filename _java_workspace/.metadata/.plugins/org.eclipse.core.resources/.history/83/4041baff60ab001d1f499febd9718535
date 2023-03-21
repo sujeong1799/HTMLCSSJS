@@ -1,0 +1,31 @@
+package day10;
+
+public class Ezen_선생님Main {
+
+	public static void main(String[] args) {
+		
+		Ezen_선생님 e1 = new Ezen_선생님();
+		e1.setName("홍길똥");
+		e1.setAge(20);
+		e1.setBirth("2002-01-01");
+		e1.setPhone("010-0000-1111");
+		e1.setBranch("인천");
+		e1.printInfo();
+		e1.printCompany();
+		e1.insertCourse("java", "4개월");
+		e1.insertCourse("html", "5개월");
+		e1.insertCourse("DB", "1개월");
+		e1.printCourse();
+		
+		System.out.println();
+		
+		Ezen_선생님 e2 = new Ezen_선생님("홍기리","2001-01-01", 22, "010-1212-3232","서울");
+		e2.printInfo();
+		e2.printCompany();
+		e2.insertCourse("JAVA", "6개월");
+		e2.insertCourse("컴퓨터 활용능력", "1개월");
+		e2.printCourse();
+		
+	}
+
+}

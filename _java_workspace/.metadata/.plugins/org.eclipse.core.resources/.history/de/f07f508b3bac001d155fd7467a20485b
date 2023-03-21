@@ -1,0 +1,89 @@
+package day11;
+
+public class CustomerMain {
+
+	public static void main(String[] args) {
+		
+		
+		Customer[] customerList = new Customer[10]; // 10개의 객체를 담을 배열? 똑같은 값을 반복해서 담을 순 없다.
+		Customer cLee = new Customer(10001,"홍길동");
+		Customer gHong = new GoldCustomer(10002,"윤민영");
+		Customer vChoi = new VipCustomer(10003,"망난이",1111);
+		
+		int cnt=0;
+		customerList[cnt] = cLee;
+		cnt++;
+		customerList[cnt] = gHong;
+		cnt++;
+		customerList[cnt] = vChoi;
+		cnt++;
+		
+		
+		System.out.println("-----고객 정보 출력-----");
+		//for문을 활용해서 고객정보 출력
+		for(int i=0; i<cnt; i++) {
+		customerList[i].customerInfo();
+		}
+		
+		System.out.println("---할인율과 포인트 계산---");
+		int price=1_000_000;
+		int cost;
+		//for문을 활용하여 할인율과 포인트 계산 내역 출력
+		for(int i=0; i<cnt; i++) {
+			customerList[i].calcPrice(price);
+			customerList[i].customerInfo();
+			System.out.println(customerList[i].customerName+"님이 지불하실 금액은 "+ "원입니다.");	
+			
+		}
+		
+		
+//		cLee.calcPrice(1000000);
+//		cLee.customerInfo();
+//		cLee.calcPrice(10000);
+//		cLee.customerInfo();
+//		
+//		
+//		gHong.customerInfo();
+//		
+//		vChoi.customerInfo();
+//		
+//		
+//		System.out.println("=====할인율과 포인트 계산=====");
+//		int price = 100000;
+//		int cost =cLee.calcPrice(price);
+//		System.out.println(cLee.getCustomerName()+"님이 지불하실 금액은 "+ cost+"원입니다.");
+//		System.out.println(cLee.getCustomerName()+"님의 현재 포인트는 "+cLee.bonusPoint+"점 입니다.");
+//		
+		
+//		
+//		price = 100000;
+//		int cost1 = gHong.calcPrice(price);
+//		System.out.println(gHong.getCustomerName()+"님이 지불하실 금액은 "+ cost1+"원입니다.");
+//		System.out.println(gHong.getCustomerName()+"님의 현재 포인트는 "+gHong.bonusPoint+"점 입니다.");
+//		
+//		price = 100000;
+//		int cost2 = vChoi.calcPrice(price);
+//		System.out.println(gHong.getCustomerName()+"님이 지불하실 금액은 "+ cost2+"원입니다.");
+//		System.out.println(gHong.getCustomerName()+"님의 현재 포인트는 "+vChoi.bonusPoint+"점 입니다.");
+		
+		
+		
+		
+		
+		
+//		System.out.println();
+//		GoldCustomer c = new GoldCustomer();
+//		c.setCustomerID(00010);
+//		c.setCustomerName("홍길동");
+//		c.calcPrice(20000);
+//		c.customerInfo();
+		
+		
+//		VIPCustomer v = new VIPCustomer();
+//		v.setCustomerID(00030);
+//		v.setCustomerName("홍이");
+//		v.calcPrice(20000);
+//		v.customerInfo();
+	}
+
+}

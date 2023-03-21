@@ -1,0 +1,29 @@
+package day13;
+
+import java.util.HashMap;
+
+public class 과제 {
+
+	public static void main(String[] args) {
+		/* 단어장 
+		 * 
+		 * 단어:의미 => hello : 안녕
+		 * 
+		 * 5개의 단어를 입력하고, 단어장을 출력하세요
+		 * */
+
+		HashMap<String, String> memo = new HashMap();
+		memo.put("hello", "안녕");
+		memo.put("movie", "영화");
+		memo.put("Newjeans", "새청바지");
+		memo.put("ive", "아이브");
+		memo.put("baseball", "약우");
+		
+		for(String tmp : memo.keySet()) {
+		System.out.println("단어: "+tmp+" 뜻 : "+memo.get(tmp));			
+		}
+		
+		
+	}
+
+}

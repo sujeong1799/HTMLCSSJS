@@ -1,0 +1,61 @@
+package day12;
+
+public class 내부클래스 {
+
+	public static void main(String[] args) {
+		/* 내부클래스란 : 클래스 내부에 선언한 클래스
+		 * - 내부클래스를 포함한 외부클래스와 밀접한 연관이 있고,
+		 * 	 다른 외부에서 내부클래스를 사용할 일이 없을경우 사용한다.
+		 * - 중첩클래스라고도 한다.
+		 * - 인스턴스 내부클래스, 정적(static) 내부클래스, 지역(local) 내부클래스, 익명(anonymous) 내부클래스
+		 * - 익명(anonymous) 내부클래스 -> 익명클래스를 사용하기 위해 내부클래스를 사용 
+		 *  
+		 * - 내부적으로 활용할 목적으로 만드는 클래스이기 때문에 private를 선언하는것을 권장.
+		 * - 내부 클래스 생성시기 : 외부클래스가 생성된 후 생성됨.(static은 다름)
+		 * - private이 아닌 내부 클래스는 다른 외부클래스에서 생성할 수 있음.
+		 * */
+		
+		Outclass out = new Outclass(); // Inclass도 같이 생성 완료
+		System.out.println("외부 클래스를 이용하여 내부 클래스의 메서드를 호출");
+		out.usingclass();
+
+	}
+
+}
+
+class Outclass{
+	
+	//멤버변수
+	private int num = 10;
+	private static int sNum = 20;
+	private Inclass in;
+
+	//생성자
+	public Outclass() {
+		in = new Inclass(); // 생성만 했지 호출은 X
+	}
+	
+	
+	
+	// Outclass 멤버변수로 추가하는 것과 같은 효과
+	private class Inclass{
+	//바깥쪽에 클래스가 있는데 안에 하나 더 만드는걸 내부클래스라고 한다.
+		
+		int inNum = 100;
+//		static int sInNum = 200; // 에러! 왜? class Outclass가 생성된 이후에 Inclass를 생성하는건데,  ㅡㅡ?
+		
+		void inClassPrint() {
+			System.out.println("Outclass Num ="+num+" (외부클래스의 인스턴스 변수)");
+			System.out.println("Outclass sNum ="+sNum+" (외부클래스의 static 변수)");
+			System.out.println("Inclass inNum ="+inNum+" (내부클래스의 인스턴스 변수)");
+		}
+		
+//		static void sTest() { // 에러!
+//			
+//		}
+		
+	}
+	public void usingclass() {
+		in.inClassPrint(); // 내부클래스 변수를 사용하여 메서드를 호출
+	}
+}

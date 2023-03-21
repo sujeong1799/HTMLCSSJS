@@ -1,0 +1,10 @@
+package day12;
+
+public class 익명클래스 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

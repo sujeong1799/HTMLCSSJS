@@ -1,0 +1,43 @@
+package day12;
+
+public class 익명클래스 {
+	public static void main(String[] args) {
+		TV t = new TV();
+//		t.trunOn();
+//		t.trunOff(); // 직접 접근
+		
+		product(t);
+	}
+	
+	
+	public static void product(Power p) {
+		p.trunOn();
+		System.out.println("Tv가 작동중입니다.");
+		
+		p.trunOff();
+		
+	}
+	
+}
+
+interface Power{
+	void trunOn();
+	void trunOff();
+	
+}
+
+class TV implements Power{
+
+	@Override
+	public void trunOn() {
+		// TODO Auto-generated method stub
+		System.out.println("전원이 켜집니다.");
+	}
+
+	@Override
+	public void trunOff() {
+		// TODO Auto-generated method stub
+		System.out.println("전원이 꺼집니다.");
+	}
+	
+}

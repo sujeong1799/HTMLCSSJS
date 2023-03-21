@@ -1,0 +1,78 @@
+package day14;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Scanner;
+
+
+
+public class Subject {
+	
+	HashMap<String, Integer> map  = new HashMap<>();
+	Scanner scan = new Scanner(System.in);
+
+	public static void main(String[] args) {
+
+	/* map을 이용 성적관리 프로그램 생성
+	 * >>menu
+	 * 1. 성적추가 (국어 97 <이런식으로 추가)
+	 * 2. 성적조회(전체출력, 합계, 평균 같이 출력)
+	 * 3. 성적조회(과목으로 검색해서 일치하는 과목,(점수?) 출력)
+	 * 4. 성적수정 : 서치 후 수정. (ㅇㅇ과목을 수정하겠습니다.)
+	 * 5. 성적삭제
+	 * 6. 종료
+	 * 
+	 * CRUD ? create 생성, read 읽기, update 수정, delete 삭제 
+	 * */
+		
+		Subject ex = new Subject();
+		ex.input();
+		ex.printAll();
+		
+
+	}
+	
+	public void input() {
+		while(map.size()<5) {
+		System.out.println("과목과 점수를 입력해주세요.");
+		String sub = scan.next();
+		int score = scan.nextInt(); 
+		
+		map.put(sub, score);
+		}
+		}
+	
+	public void printAll() {
+		int sum = 0;
+		Iterator<String> it = map.keySet().iterator(); // 자료형 잊지말고 넣어주자.
+		while(it.hasNext()) {
+			String sub = it.next(); // key값 반환
+			int score = map.get(sub); // Value값 반환 map에서 직접호출
+			System.out.println("과목 : "+sub+", 점수 : "+score);
+			sum += score;
+		}
+		System.out.println("평균 : "+sum);
+	}
+	
+	public void printSub() {
+		
+	}
+	
+	public void update(HashMap<String, Integer> map) {
+		System.out.println("수정할 과목과 점수를 입력해주세요.");
+		String sub = scan.next();
+		int Score = scan.nextInt();
+		
+		
+	}
+		
+	public void delete(HashMap<String, Integer> map) {
+		
+		System.out.println("삭제할 과목과 점수를 입력해주세요.");
+		String sub = scan.next();
+		int score = scan.nextInt();
+		
+		map.remove(sub);
+		map.remove(score);
+	}
+}

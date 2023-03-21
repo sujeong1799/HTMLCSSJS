@@ -1,0 +1,71 @@
+package day11;
+
+import java.util.Scanner;
+
+public class 과제 {
+
+	public static void main(String[] args) {
+		/* 5개의 문자열 배열을 생성한 후, 5개의 파일명을 입력받는 코드를 작성
+		 * 입력받은 파일 중 이미지 파일 검색하여 출력하는 코드
+		 * 이미지파일 형식은 (jpg, png, gif, jpeg)
+		 * String[] fileName = {"java.txt", "String.jpg", "method.png",
+		 * "String.pdf", "java.pdf"}
+		 * 
+		 *  여기서 이미지 확장자만 출력하세요
+		 *  ----이미지 파일----
+		 *  String.jpg
+		 *  method.png
+		 * */
+		
+		String[] fileName = new String[5];
+		
+		Scanner scan = new Scanner(System.in);
+		for(int i=0; i<fileName.length; i++) {
+			fileName[i] = scan.next();
+		}
+		
+		String[] img = {"jpg", "png", "gif", "jpeg"};
+		
+		
+		for(int i=0; i<fileName.length; i++) {
+			if (fileName[i](img)) {
+				System.out.println(fileName[i]);
+			}
+		}
+		
+//		for(int i=0; i<fileName.length; i++) {
+//			System.out.println(fileName[i]);
+//		}
+		
+		
+		
+		
+		
+	}
+	
+	public static void printArr(String[] fileName, String[] img) {
+		for(int i=0; i<fileName.length; i++) {
+			if(isContain(fileName, img ));{ // true라면   
+				 System.out.println(fileName[i]);
+			} {
+				System.out.println("웩");
+			}
+		}
+	}
+
+	
+	public static boolean isContain(String[] fileName, String[] img) { // 5-1.arr에 들어가는게 user든 로또든 상관없었음.
+		//위에 만든 배열과, 랜덤값을 주고 중복이 있는지 확인할거야
+		for(int i=0; i<fileName.length; i++) {
+			if(fileName[i]==img[i]) {
+				return true;
+			}
+		}
+		return false;
+
+	}
+	
+	
+	
+	
+}
