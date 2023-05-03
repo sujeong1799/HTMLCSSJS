@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        button 2개를 생성
+        버튼 1 = 더하기 버튼 값이 1씩 증가 
+        버튼 2 = 빼기버튼 값이 1씩 감소    0까지는 안내려감    
+     -->
+
+     <button id="incre">더하기</button>
+     <button id="decre">빼기</button>
+
+     <h3 id="number"></h3>
+
+     <script>
+        const number = document.getElementById('number');
+        const incre = document.getElementById('incre');
+        const decre = document.getElementById('decre');
+
+        incre.addEventListener('click',function(){
+            let currVal = Number(number.innerText);
+            number.innerText = currVal +1;
+        })
+        decre.addEventListener('click',function(){
+            let currVal = Number(number.innerText);
+            if(currVal <= 0){
+                number.innerText = 0;
+            } else {
+                number.innerText = currVal - 1;
+            }
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="btn1">ul태그에 li 한번에 추가</button>
+    <button type="button" id="btn2">ol태그에 li 순차적 추가</button>
+    <button type="button" id="btn3">ul 태그에 appendchild로 li 한번에 추가</button>
+    <button type="button" id="btn4">ol태그에 appendchild로 li 순차적 추가</button>
+
+    <ul id="ul1"></ul>
+    <hr>
+    <ol id="ol1"></ol>
+    <hr>
+    <ul id="ul2"></ul>
+    <hr>
+    <ol id="ol2"></ol>
+
+    <script>
+        const text = ['HTML', 'CSS', 'Javascrip', 'SQL'];
+        let count = 0;
+        let count2 = 0;
+
+        // ul태그에 li 한번에 추가
+        document.getElementById('btn1').addEventListener('click', function () {
+            let li = '';
+            ul1.innerHTML = ''; // 초기화 시켜서 더이상 못만들게 하기 
+            for (let i = 0; i < text.length; i++) {
+                li += `<li>${text[i]}</li>`;
+            }
+            document.getElementById('ul1').innerHTML = li;
+        })
+
+        // ol태그에 li 순차적 추가
+        document.getElementById('btn2').addEventListener('click', function () {
+            let li = '';
+            
+            if(count < text.length){
+                li = `<li>${text[count]}</li>`;
+                count++;
+            }
+            document.getElementById('ol1').innerHTML += li;
+        })
+
+        // appendChild로 넣을때는 한번에 다 넣어서 만들기
+        // ul 태그에 appendChild로 li 한번에 추가
+        document.getElementById('btn3').addEventListener('click', function () {
+            let li;
+            ul2.innerHTML = ''; // 초기화 시켜서 더이상 못만들게 하기 
+            for (let i = 0; i < text.length; i++) {
+                li = document.createElement('li');
+                li.innerHTML += `${text[i]}`;
+                document.getElementById('ul2').appendChild(li);
+            }
+        })
+
+        //ol태그에 appendChild로 li 순차적 추가
+        document.getElementById('btn4').addEventListener('click', function () {
+            let li = document.createElement('li');
+            li.innerHTML += text[count2];
+            count2++;
+            // 초기화 시켜서 더이상 못만들게 하기 
+            if(count2 < text.length){
+            }
+            document.getElementById('ol2').appendChild(li);
+        })
+    </script>
+</body>
+
+</html>

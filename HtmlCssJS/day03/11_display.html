@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 50px;
+            background-color: coral;
+        }
+        span{
+            /* 크기와 넓이를 지정했더라도 div만큼 안커짐 */
+            /* 크게 만들려면 disapldy : block으로 하면 됨 */
+            width: 200px;
+            height: 50px;
+            background-color: rgba(148, 0, 211, 0.458);
+            display: block;
+        }
+        button{
+            /* 버튼은 inline 속성이기 때문에 커진다. */
+            /* 근데 a태그가 밑으로 내려가지 않음 블럭을 주면 밑으로 내려감 */
+            width: 200px;
+            height: 50px;
+            background-color: gold;
+        }
+        a{
+            /* a도 inline태그라 안커짐 block주면 커짐 */
+            width: 200px;
+            height: 50px;
+            background-color: lightgreen;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>나는div block 속성</div>
+    <span>나는 span inline 속성</span>
+    <button>난 button inline-block속성</button>
+    <a href="http://naver.com">난 a태그 inline 속성</a>
+</body>
+</html>

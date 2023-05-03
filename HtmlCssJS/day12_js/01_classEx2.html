@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자 함수</title>
+</head>
+
+<body>
+    <script>
+        //정의할 프로퍼티(멤버변수) : firstName, lastName, age, address
+        // 클래스, 객체, 생성자 함수
+        // 메서드 (함수 호출하면 멤버변수 4개 출력) 자바에서의 toString 개념의 메서드 만들기
+
+        class User {
+            constructor(firstName, lastName, age, address) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+                this.address = address;;
+            }
+            print1(){
+                console.log(this.firstName, this.lastName, this.age, this.address);
+            }
+
+            get userInfo(){
+                return `${this.firstName}, ${this.lastName}, ${this.age}, ${this.address}`;
+            }
+
+        }
+
+        let user = new User('홍','길동', 20, '인천');
+        let user2 = new User('김','길동', 45, '서울');
+        let user3 = new User('최','길동', 23, '제주도');
+        console.log(user);
+        //메서드는 print(), get은 print
+        user.print1();
+        user2.print1();
+        user3.print1();
+
+
+        // 생성자 함수에서는 get 못 씀
+        function Info(firstName, lastName, age, address) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.address = address;;
+            this.print2 = function(){
+                console.log(this.firstName, this.lastName, this.age, this.address);
+            }
+        }
+
+
+        let info1 = new Info('오','길동', 50, '강원도');
+        let info2 = new Info('윤','길동', 23, '대전');
+
+        info1.print2();
+        info2.print2();
+
+        const person = {
+            firstName: "",
+            lastName: "",
+            age: "",
+            address: "",
+
+            // set 함수 
+            setInfor: function(first, last, age, add){
+                this.firstName = first;
+                this.lastName = last;
+                this.age = age;
+                this.address = add;
+            },
+            get personInfo(){
+                return `${this.firstName}${this.lastName}, ${this.age}, ${this.address}`;
+            },
+
+            set setFinstName(first){
+                this.firstName = first;
+            },
+
+        }
+
+        person.setInfor('이','길동', 35, '서울');
+        console.log(person);
+        console.log(person.personInfo);
+
+        
+
+
+    </script>
+</body>
+
+</html>

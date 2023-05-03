@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업창</title>
+</head>
+
+<body>
+
+
+    <button type="button" onclick="openWindow();">열기</button>
+    <button type="button" onclick="closeWindow();">닫기</button>
+    <button type="button" onclick="알람()">alert</button>
+    <button type="button" onclick="이름()">prompt</button>
+    <button type="button" onclick="질문()">confirm</button>
+    <h3 id="msg">
+
+    </h3>
+
+    <script>
+        let myWindow;
+        function openWindow() {
+            // 높이와 넓이는 같은 ""안에 넣어주기.
+            myWindow = window.open("", "mywindow", "width = 400, height = 500")
+            // myWindow가 없어도 열리는데 없으면 닫기가 안됨..
+        }
+
+        function closeWindow() {
+            if (myWindow) {
+                myWindow.close();
+            }
+        }
+        function 알람() {
+            alert('이제 곧 6시 입니다. 삐빅. 삐..삐빅');
+        }
+
+        function 이름() {
+            let name = prompt('당신의 이름을 입력해주세요!');
+            document.getElementById('msg').innerText = `ㄴ ㅏ의 이름은 ${name}!`;
+        }
+
+        function 질문() {
+            let goHome = confirm('집에 가고 싶은가요?');
+            if (goHome == true) {
+                document.getElementById('msg').innerText = `당장 집으로 Go`;
+            } else {
+                document.getElementById('msg').innerText = `아침으로 돌아갑니다. 하루를 다시 시작하세요.`;
+            }
+        }
+    </script>
+</body>
+
+</html>

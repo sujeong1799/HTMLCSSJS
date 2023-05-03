@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>반응형 Grid</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            div {
+                /* 가로는 전체 100% */
+                width: 100%;
+            }
+
+            .header {
+
+                height: 60px;
+                background-color: rgb(0, 0, 0);
+                font-size: 40px;
+                color: white;
+                padding-left: 20px;
+                box-sizing: border-box;
+            }
+
+            .main-img {
+                /* width 크기 준 이유 맨 처음 이 크기를 유지하고 줄이려고 */
+                height: 800px;
+                background-image: url(/image/컴터.jpg);
+                /* no-repeat안하면 여러개 나옴 */
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+
+            .subject {
+                height: 400px;
+            }
+
+            .content {
+                /* height 크기 줄어든 이유? 옆에 반만 쓸거니까! */
+                height: 400px;
+                float: left;
+                background-image: url(/image/모니터.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+
+            }
+
+            .sub {
+                /* a태그와 같이 쓸거니까 position설정 */
+                position: relative;
+                height: 400px;
+                float: right;
+                background-image: url(/image/키보드.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+
+            .footer {
+                height: 400px;
+                float: right;
+                background-image: url(/image/마우스.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+            .subject>h1{
+                padding-left: 20px;
+            }
+            
+            .subject>h2{
+                padding-top: 20px;
+                padding-left: 20px;
+
+            }
+
+            .subject>p{
+                padding-left: 20px;
+                font-size: 25px;
+                color: gray;
+            }
+
+
+            .sub2>a {
+                /* 키보드랑 같이 움직일거니께 position 설정 */
+                position: absolute;
+                border: 3px solid white;
+                top: 50%;
+                left: 50%;
+                padding: 10px 30px;
+                transform: translate(-50%, -50%);
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                font-size: 25px;
+
+            }
+
+            @media screen and (min-width:800px) {  
+                .header {
+                    height: 60px;
+                }
+
+                .main-img {
+                    width: 50%;
+                    float: left;
+                    height: 500px;
+                }
+
+                .subject {
+                    width: 50%;
+                    float: right;
+                    height: 500px;
+                }
+
+                .content {
+                    width: 50%;
+                    float: left;
+                    height: 500px;
+                }
+
+                .sub {
+                    width: 50%;
+                    float: right;
+                    height: 250px;
+                }
+
+                .footer {
+                    width: 50%;
+                    float: right;
+                    height: 250px;
+                }
+            }
+
+
+            @media screen and (min-width:1600px) {
+                .header {
+                    height: 60px;
+                }
+
+                .main-img {
+                    width: 50%;
+                    height: 800px;
+
+                }
+
+                .subject {
+                    width: 50%;
+                    float: right;
+                    height: 400px;
+
+                }
+
+                .content {
+                    width: 25%;
+                    height: 400px;
+                    float: left;
+
+                }
+
+                .sub {
+                    width: 25%;
+                    height: 200px;
+                    float: right;
+                }
+
+                .footer {
+                    width: 25%;
+                    height: 200px;
+                    float: right;
+                }
+
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <div class="header">IN'O</div>
+        <div class="main-img"></div>
+        <div class="subject">
+                <h2>Portfolio</h2>
+                <h1>Make Hardware Soft</h1>
+                <p>The standard chunk of Lorem lpsum used since the 1500s is reproduced</p>
+                <p>below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus</p>
+                <p>Bonorum et malorun" by Cicero are also</p>
+        </div>
+        <div class="content"></div>
+        <div class="sub">
+            <div class="sub2">
+                <a href="http://www.naver.com" target="_blank">VIEW MORE</a>
+            </div>
+        </div>
+        <div class="footer"></div>
+        <div class="last"> </div>
+    </body>
+
+    </html>
+</body>
+
+</html>

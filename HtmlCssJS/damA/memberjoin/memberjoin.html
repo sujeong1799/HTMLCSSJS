@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>memberjoin</title>
+    <link rel="stylesheet" href="memberjoin.css">
+    <script src="memberjoin.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <p id="p1">회원가입</p>
+        <p id="p2">항상 최선을 다하겠습니다!</p>
+        <input type="text" id="id" class="text-field" placeholder="아이디는 문자와 숫자를 포함한 4자 이상, 20자 이하입니다">           
+        <p id="id_text"></p>
+        <input type="text" id="nickname" class="text-field" placeholder="닉네임 2자 이상, 10자 이하입니다">           
+        <p id="nickname_text"></p>
+        <input type="password" id="password" class="text-field" placeholder="비밀번호는 문자와 숫자를 포함한 4자 이상, 20자 이하입니다">
+        <p id="pw_text"></p>
+        <input type="password" id="password_re" class="text-field" placeholder="비밀번호를 한번 더 입력해주세요">
+        <p id="pw_re_text"></p>
+        <button type="button" id="submit" class="btn-input" onclick="toHome()">회원가입 신청</button>
+    </div>
+</body>
+
+</html>

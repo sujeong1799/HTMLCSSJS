@@ -1,0 +1,45 @@
+h1 {
+    /* 중앙 정렬 */
+    text-align: center; 
+
+    /* margin과 padding는 border 을 경계로 나뉩니다. */
+    /* 바깥쪽 여백 */
+    margin: 30px auto;
+
+    /* 안쪽여백 */
+    padding: 10px;
+
+    /* 박스 길이 */
+    width: 10%;  
+
+    /* 박스선 굵기 */
+    border: 5px solid; 
+
+}
+
+body{
+    text-align: center;
+}
+ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+} 
+
+li{
+    /* 바깥쪽 여백을 줘서 메뉴끼리 떨어트려놓는다. */
+    margin: 10px;
+}
+
+.pic{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+}
+.curr_view{
+    font-weight: bold;
+}

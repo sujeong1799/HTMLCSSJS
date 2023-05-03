@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form 만들기</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <img src="/image/춘식.jpg" width="315" height="300" alt="">
+    <table border="1" bordercolor="#ae06b4fc" style="background: linear-gradient(to bottom, #e1f58996, rgba(255, 182, 55, 0.824));">
+    <form action="" >
+       <tr>
+        <td>회원가입</td>
+        <td colspan="2">Member Private Information 약관동의 실명확인 회원가입 정보수정</td>
+       </tr>
+       <tr>
+        <td>기본정보 입력</td>
+        <td colspan="2">표시는 필수항목이므로 반드시 입력해야 합니다.</td>
+       </tr>
+       <tr>
+        <td>아이디</td>
+        <td colspan="2"><input type="text" name="id"><button>중복검색</button>영문</td>
+       </tr>
+       <tr>
+        <td>비밀번호</td>
+        <td colspan="2"><input type="password" name="pw1">->재확인<input type="password"></td>
+       </tr>
+       <tr>
+        <td>비밀번호 힌트</td>
+        <td colspan="2"><input type="text" name="pw2"> 비번분실-조회시 참고할 내용</td>
+
+       </tr>
+       <tr>
+        <td>이름(본명)</td>
+        <td colspan="2"><input type="text" name="name"> ->한글</td>
+       </tr>
+       <tr>
+        <td>닉네임(별명)</td>
+        <td colspan="2"><input type="text" name="nickname"><button>중복검색</button>한글,영문</td>
+       </tr>
+       <tr>
+        <td>전자메일주소</td>
+        <td><input type="email" name="email"></td>
+        <td><input type="checkbox" name="" id="">비공개 </td>
+       </tr>
+       <tr>
+        <td>생년월</td>
+        <td><select name="year" id="">
+            <option value="">년</option>
+            <option>2023</option>
+            <option>2022</option>
+            <option>2021</option>
+            <option>2020</option>
+            <option>2019</option>
+        </select>
+        <select name="month" id="">
+            <option value="">월</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+        </select>
+        <input type="radio" name="bir" id="um">음    
+        <input type="radio" name="bir" id="ya" checked>양
+    </td>
+    <td>
+        <input type="checkbox" name="음양" id="">비공개
+    </td>
+       </tr>
+       <tr>
+        <td>성 별</td>
+        <td>
+            <input type="radio" name="gen" id="nam">남자
+            <input type="radio" name="gen" id="wo">여자
+        </td>
+        <td>
+            <input type="checkbox" name="성별" id="" disabled>비공개
+        </td>
+       </tr>
+       <tr>
+        <td>우편번호</td>
+        <td colspan="2"><input type="text" name="post1"> - <input type="text" name="post2"> <button>찾아보기</button></td>
+       </tr>
+       <tr>
+        <td>주소</td>
+        <td>
+            <input type="text" name="addr1"><br>
+            <input type="text" name="addr2"> <-나머지주소
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" checked>비공개
+        </td>
+       </tr>
+       <tr>
+        <td>일반전화 번호</td>
+        <td>
+            <select name="전화번호" id="">
+                <option value="">국번</option>
+                <option>02</option>
+                <option>031</option>
+                <option>032</option>
+            </select>
+            <input type="text" name="국번1"> - <input type="text" name="국번2">
+        </td>
+        <td>
+            <input type="checkbox" name="국번" id="" checked>비공개
+        </td>
+       </tr>
+       <tr>
+        <td>휴대전화 번호</td>
+        <td>
+            <select name="핸드폰번호" id="">
+                <option value="">국번</option>
+                <option>010</option>
+                <option>011</option>
+                <option>017</option>
+            </select>
+            <input type="text" name="pnum1"> - <input type="text" name="pnum2">
+        </td>
+        <td>
+            <input type="checkbox" name="핸폰번호" id="" checked>비공개
+        </td>
+       </tr>
+       <tr>
+        <td>홈페이지</td>
+        <td><input type="url" value="http://" name="url"></td>
+        <td><input type="checkbox" name="url" id="" disabled>비공개</td>
+       </tr>
+       <tr>
+        <td>소개, 인사말</td>
+        <td colspan="2"> 
+            <textarea name="소개" id="" cols="30" rows="5"></textarea>
+        </td>
+       </tr>
+       <tr>
+        <td>사진첨부</td>
+        <td colspan="2"> <input type="file" name=""><br>
+        200 x 200 픽셀 이하 크기만 허용</td>
+       </tr>
+       <tr>
+        <td>이름표시아이콘</td>
+        <td colspan="2"><input type="file" name=""><button>찾아보기</button><br>
+        25 x 25 픽셀 이하 크기만 허용</td>
+       </tr>
+       <tr>
+        <td>혼인여부</td>
+        <td> 
+            <input type="radio" name="merry" id="mi">미혼
+            <input type="radio" name="merry" id="gi">기혼
+            <input type="radio" name="merry" id="realno">이혼
+            <input type="radio" name="merry" id="no">교제중
+        </td>
+        <td><input type="checkbox" name="" >비공개</td>
+       </tr>
+       <tr>
+        <td>관심분야</td>
+        <td>
+            <select name="like" id="">
+                <option>선택없음</option>
+                <option>민지</option>
+                <option>하니</option>
+                <option>해린</option>
+                <option>혜인</option>
+                <option>다니엘</option>
+            </select>
+        </td>
+        <td><input type="checkbox" name="" >비공개</td>
+       </tr>
+       <tr>
+        <td>캐릭터선택</td>
+        <td colspan="2"><input type="file"></td>
+       </tr>
+       <tr>
+        <td>메일링 수신거부</td>
+        <td colspan="2"><input type="checkbox"> 메일링 수신 거부시 체크</td>
+       </tr>
+       <tr>
+        <td>쪽지 수신거부</td>
+        <td colspan="2"><input type="checkbox"> 쪽지 수신 거부시 체크</td>
+       </tr>
+       <tr>
+        <td>전체 비공개</td>
+        <td colspan="2"><input type="checkbox"> 회원등록정보 전체 비공개시 체크</td>
+       </tr>
+       <tr>
+        <td colspan="3"> 
+            <div style="text-align: center;">
+            <input type="submit" value="입력완료전송">
+            <input type="reset" value="다시입력하기">
+            </div>
+        </td>
+       </tr>
+     </form>
+    </table>
+        
+
+</body>
+</html>

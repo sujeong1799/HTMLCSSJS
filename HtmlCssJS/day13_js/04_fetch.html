@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Jua&family=Press+Start+2P&family=Rubik+Wet+Paint&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header id="header">
+
+    </header>
+
+    <section id="section">
+
+    </section>
+
+    <script>
+        let header = document.querySelector('header');
+        let sction = document.querySelector('section');
+        let str = '';
+        fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+            .then(resp => resp.json())
+            .then(json => header1(json));
+
+
+        function header1(jsonObj) {
+            str += `<h1><\h1>`
+            let myh1 = document.createElement('h1');
+            myh1.innerHTML = jsonObj['squadName'];
+            header.appendChild(myh1);
+
+            let myPara = document.createElement('p');
+            myPara.innerText = 'Hometown: ' + jsonObj['homeTown'] + ' Formed: ' + jsonObj['formed'] + ' SecretBase: ' + jsonObj['secretBase'];
+            header.appendChild(myPara);
+
+            showHeroes(jsonObj);
+        }
+
+        function showHeroes(jsonObj) {
+            let heroes = jsonObj['members'];
+
+            for (let i = 0; i < heroes.length; i++) {
+                let members = heroes[i];
+
+                let myArticle = document.createElement('article');
+                let myH2 = document.createElement('h2');
+                let myP1 = document.createElement('p');
+                let myP2 = document.createElement('p');
+                let myP3 = document.createElement('p');
+                let myList = document.createElement('ul');
+
+                myH2.innerHTML = `${members['name']}`;
+                console.log(myH2);
+                myP1.innerHTML = `age : ${members['age']}`;
+                console.log(myP1);
+                myP2.innerHTML = `secretIdentity : ${members['secretIdentity']}`;
+                console.log(myP2);
+                myP3.innerHTML = 'Superpowers: ';
+                console.log(myP3);
+
+                // powers가 멤버 배열안에 배열로 있으니까 for문을 돌려서 출력해야한다.
+                let Superpowers = members['powers'];
+                for (const a of Superpowers) {
+                    myList.innerHTML += `<li>${a}</li>`;
+                }
+                console.log(myList);
+
+                section.appendChild(myArticle);
+                myArticle.appendChild(myH2);
+                myArticle.appendChild(myP1);
+                myArticle.appendChild(myP2);
+                myArticle.appendChild(myP3);
+                myArticle.appendChild(myList);
+            }
+        }
+
+        // document.getElementById('header').addEventListener('click', ()=>{
+        //     document.getElementById('section').style.display='none';
+        // })
+    </script>
+</body>
+
+</html>

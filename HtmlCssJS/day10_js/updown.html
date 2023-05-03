@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업다운</title>
+</head>
+
+<body>
+    <h1>
+        <button type="button" id="ranBtn">랜덤 숫자 생성 버튼</button>
+
+        <!--새로고침 명령어 -->
+        <button type="button" onclick="window.location.reload();">다시시도</button>
+    </h1>
+
+    <h3 id="printMsg">
+        <!-- 랜덤숫자가 나왔습니덩  -->
+    </h3>
+
+    <h1>
+        <input type="number" id="myGuess" max="99" min="1">
+        <button type="button" id="guessBtn">정답</button>
+    </h1>
+    <h3 id="result" class="result">
+
+        <!-- 정답숫자 나오고 정답입니다~ -->
+    </h3>
+
+
+    <script>
+        let max = 99;
+        let min = 1;
+        let num = 0;
+        let cnt = 0;
+        document.getElementById('ranBtn').addEventListener('click', function () {
+            num = Math.floor(Math.random() * (max - min + 1)) + min;
+            document.getElementById('printMsg').innerHTML = `컴퓨터가 랜덤수(1~99)를 생성하였습니다.`;
+            
+        })
+
+        document.getElementById('guessBtn').addEventListener('click', function () {
+            console.log(num);
+            let myGuess = document.getElementById('myGuess').value;
+            let str = '';
+            if (myGuess > 0 && myGuess < 100) {
+                if (myGuess > num) {
+                    cnt++;
+                 str = `Down하세요!!! 시도 횟수 : ${cnt}`;
+                } else if (myGuess < num) {
+                    cnt++;
+                    str = `Up하세요!!! 시도 횟수 : ${cnt}`;
+                } else {
+                    cnt++;
+                    str = `정답입니다! 랜덤 숫자는 ${num}이였습니다.
+                <img src="/image/07. DJ 라이언과 루프탑에서 힐링.png" alt="">`;
+                }
+
+                if (cnt > 5) {
+                    str = `뗴잉~ 시도 횟수가 초과되었습니다! 진행불가`;
+                }
+            }else{
+               str = `1과 99사이의 숫자만 입력 가능합니다.`;
+            }
+            document.getElementById('result').innerHTML = str;
+        })
+
+
+    </script>
+
+</body>
+
+</html>

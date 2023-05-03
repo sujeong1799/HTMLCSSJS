@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector</title>
+</head>
+<body>
+    
+    <h1>
+        우우우 난 h1이다.
+    </h1>
+
+    <ul>
+        <li>dfdf</li>
+        <li>sfadasf</li>
+    </ul>
+
+    <script>
+        const h1 = document.querySelector('h1'); // 단일 노드 리턴
+        console.log(h1);
+        console.log(typeof h1);
+
+        const li = document.querySelectorAll('li');
+        console.log(li);
+    </script>
+</body>
+</html>

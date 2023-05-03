@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            /* width: 50px;
+            height: 50px;
+            background-color: aliceblue;
+            font-size: 20px;
+            margin: 10px;
+            border-radius: 20%;
+            /* border-color: rgba(255, 251, 142, 0.762); */
+            width: 50px;
+            height: 50px;
+            border: 4px solid;
+            border-image: linear-gradient(#ffcdf3aa, #c1b0e6) 1;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="area top">
+            <!-- 번호마다 value를 넣어주면 가져올 수 있음. -->
+            <button type="button" value="7">7</button>
+            <button type="button" value="8">8</button>
+            <button type="button" value="9">9</button>
+            <button type="button" value="+">+</button>
+            <button type="button" value="C">C</button><br>
+            <button type="button" value="4">4</button>
+            <button type="button" value="5">5</button>
+            <button type="button" value="6">6</button>
+            <button type="button" value="-">-</button><br>
+            <button type="button" value="1">1</button>
+            <button type="button" value="2">2</button>
+            <button type="button" value="3">3</button>
+            <button type="button" value="*">*</button><br>
+            <button type="button" value=".">.</button>
+            <button type="button" value="0">0</button>
+            <button type="button" id="op" value="=">=</button>
+            <button type="button" value="/">/</button>
+
+        </div>
+        <h1 class="area bottm" id="printFomula"></h1>
+    </div>
+
+    <!--제일 처음 div를 클릭했을때 
+    -->
+    <script>
+
+        const printFomula = document.getElementById('printFomula');
+        let str = '';
+        let a = '';
+        let b = '';
+        let operator = '';
+
+
+        function calc(num1, operator, num2) {
+            let result = 0;
+            switch (operator) {
+                case "+": result = Number(a) + Number(b);
+                    break;
+                case '-': result = Number(a) - Number(b);
+                    break;
+                case '*': result = Number(a) * Number(b);
+                    break;
+                case '/': result = Number(a) / Number(b);
+            }
+            return result;
+        }
+
+        //연산하기 위한 f o l 값 
+        // 공백 앞은 첫번째숫자
+        // 공백 바로 뒤는 연산자
+        // 공백 뒤는 두번째 숫자
+
+        // div감싸고 클릭햇을때 값 가져오기?
+        document.querySelector('.container').addEventListener('click', function (e) {
+            let btnValue = e.target.value;
+            console.log(btnValue);
+            console.log(typeof btnValue);
+
+            if (isNaN(btnValue) == false) { // 숫자의 경우
+                str += btnValue;
+            } else { // 기호의 경우
+                if (btnValue != undefined) {
+                    switch (btnValue) {
+                        case "C":
+                            str = "";
+                            fomula.innerHTML = "";
+                            break;
+                        case ".":
+                            str += btnValue; // 기존 값에 붙이기
+                            break;
+                        default:
+                            let result = ""; // 사칙연산에 대한 결과 변수
+                            if (btnValue == "=") {
+                                result = 함수명(str);
+
+                            }
+                    }
+
+
+                }
+            }
+            printFomula.innerHTML = `${str}  `;
+        })
+
+
+    </script>
+</body>
+
+</html>

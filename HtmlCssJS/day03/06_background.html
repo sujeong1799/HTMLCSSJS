@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경속성</title>
+    <style>
+        .box{
+            background-color: rgba(89, 71, 4, 0.692);
+            background-image: url(/image/NewJeans_Ditto_03.jpg);
+            background-size: 200px 200px;
+            background-repeat: no-repeat;
+            /* background-position: center; */
+            background-position: 30px 30px;
+            width: 300px;
+            height: 300px;
+
+            /* 한번에 쓸 때 색상, 이미지, 사진위치, size, repeat */
+            /* background: yellow url() center 100px 100px center no-repeat; */
+        }
+        .box2{
+            background-image: url(/image/NewJeans_Ditto_04.jpg);
+            background-size: 100%;
+            width: 300px;
+            height: 300px;
+            box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.42);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <br>
+    <div class="box2"></div>
+</body>
+</html>

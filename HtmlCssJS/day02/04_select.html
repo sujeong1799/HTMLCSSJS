@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select</title>
+</head>
+<body>
+    <!-- 
+        - select : 제시된 항목 중 하나를 선택하는 태그
+        - 콤보박스와 비슷
+        - option 태그로 안의 선택영역의 값을 표현
+        - value 속성을 넣어주면, 옵션태그가 선택되었을때 전송되는 값을 지정
+        - value가 없으면 option 태그의 문자열값이 그대로 전송된다.
+     -->
+<!-- 전송되는걸 보려면 무조건 form 태그를 써야한다. -->
+     <form action="">
+
+        <!-- name="year"가 변수 역할을 한다. -->
+        <select name="year" id="">
+            
+            <!-- 난 출생년도를 제목으로 쓸거야. -->
+            <option value="">출생년도</option>
+
+            <!-- value와 문자열 값이 같아서 생략해도 된..다.. -->
+            <option >2001</option>
+            <option >2002</option>
+            <option value="2003">2003</option>
+        </select>
+        <button type="submit">전송</button>
+     </form>
+</body>
+</html>

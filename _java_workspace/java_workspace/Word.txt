@@ -1,7 +1,0 @@
-단어장
-Hello 안녕
-hi 안녕
-apple 사과
-orange 오렌지
-banana 바나나
-dog 강아지

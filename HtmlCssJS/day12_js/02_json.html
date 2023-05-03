@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 객체에 대한 정보
+        const stringData = '{"id":"1234", "type":"donut","name":"cake",' +
+            '"image":{"url":"img/0001","width":"200","heigth":"200"},' +
+            '"thumbnail":{"url":"img/thumbnail/0001.jpg","width":"20","heigth":"20"}}';
+
+
+        let parseData = JSON.parse(stringData);
+        console.log(parseData);
+
+        // for in문을 통해서 key value를 찍어보자
+        // id가 먼저 출력되는 이유? 맨위에서부터 읽으니까~~~!!!!
+        for (const a in parseData) {
+            
+            // 이미지 뽑아내기
+            if (a == 'image') {
+                console.log(`----${a}----`);    
+                for (const b in parseData.image) {
+                    console.log(b,':', parseData.image[b]);
+                }
+
+            // 썸네일 뽑아내기
+            } else if (a == 'thumbnail') {
+                console.log(`----${a}----`);
+                for (const c in parseData.thumbnail) {
+                    console.log(c,':', parseData.thumbnail[c]);
+                }
+
+            //맨 첫 줄 뽑아내기 
+            }else{
+                console.log(a,':', parseData[a]); 
+                //  key와 key의 value를 뽑기
+            }
+
+        }
+
+
+        for(const key in parseData){
+            if(key == 'image' || key == 'thumbnail'){
+                //한번 더 객체에 접근
+                let innerObject = parseData[key]; // image :{...}값이 object에 저장
+                for(const k in innerObject){
+                    console.log(k, innerObject[k]);
+                }
+
+            }else{
+                console.log(key, parseData[key]);
+            }
+        }
+
+
+        const myInfoData = {
+            "name":"kim",
+            "age":"30",
+            "email":"123@naver.com",
+            "major":{
+                "m1":"java",
+                "m2":"html",
+                "m2":"css"
+            }
+        }
+
+        // 위 객체를 JSON.stringify()써서 문자열로 변환 콘솔에 타입ㄱ과 내용
+        let infoData = JSON.stringify(myInfoData);
+        console.log(infoData);
+        console.log(typeof infoData);
+
+    </script>
+</body>
+
+</html>

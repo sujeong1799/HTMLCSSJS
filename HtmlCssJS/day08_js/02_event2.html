@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자색 바꾸기</title>
+    <style>
+        .java{
+            color: red;
+            font-size: 30px;
+            background-color: cornsilk;
+        }
+        .글자{
+            font-size: 50px;
+            background-image: url(/image/춘식굿즈.jpg);
+
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading" class="java">javascript</h1>
+    <h3 id="main" class="글자">위의 글자를 클릭해보세요</h3>
+    <p id="text">집에가고싶아ㅏ이ㅛ</p>
+
+    <script>
+        let heading = document.getElementById('heading');
+        heading.onclick = function(){
+            // heading을 클릭하면 컬러가 red로 바뀜
+            // heading.style.color = 'red';
+
+            // heading의 class리스트에 java가 있으면 red toggle적용
+            heading.classList.toggle('java');
+        }
+
+        let main = document.querySelector('#main');
+        main.onclick = function(){
+            // main.style.setProperty("font-size", "30px");
+            main.classList.toggle('글자');
+        }
+
+        let text = document.querySelector('#text');
+        text.onclick = function(){
+            text.style.setProperty("font-size", "50px");
+        }
+
+    </script>
+
+</body>
+</html>

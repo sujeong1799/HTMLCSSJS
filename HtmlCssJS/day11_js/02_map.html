@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map type</title>
+</head>
+<body>
+    <script>
+        const myMap = new Map();
+        myMap.set("html", 85);
+        myMap.set("css", 90);
+        myMap.set("js", 96);
+        console.log(myMap);
+        console.log(myMap.get('js')); // key를 주면 value를 준다!
+        myMap.delete("css"); // 점수만 남아있 ㅇ ㅓ . . .
+        console.log(myMap.has('css'));
+
+        console.log('----------------------');
+        // 뭐가 있는지 탐색해보기
+        myMap.forEach(function(value, index, self){
+            console.log(index, value, self);
+        })
+
+        // myMap.entries().forEach(function(v, k, s){
+        //     console.log(k, v, s);
+        // })  //이건 안됩니다~ 
+
+        console.log(myMap.entries());
+        console.log('---------------------------');
+        for(const a of myMap.entries()){
+            console.log(a);
+           for(const key of a){
+            console.log(key);
+           }
+        }
+
+        console.log(myMap.keys());
+        myMap.clear();
+        console.log(myMap.size);
+
+
+
+
+    </script>
+</body>
+</html>

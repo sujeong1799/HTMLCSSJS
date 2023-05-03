@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const fruits = ["Apple", "Orange", "Apple", "Banana"];
+        // Apple의 l 구하기
+        let key = fruits[fruits.indexOf("Apple", 1)].indexOf("App")+"App".length; 
+        console.log(key);
+
+        const f = fruits.entries();
+        console.log(f);
+
+        for(const g of f){
+            console.log(g);
+            console.log(typeof g);
+        }
+    </script>
+</body>
+</html>

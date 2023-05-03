@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 Grid</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            /* 가로는 전체 100% */
+            width: 100%;
+        }
+        .header{
+            height: 60px;
+            background-color: aquamarine;
+        }
+        .main-img{
+            height: 350px;
+            background-color: rgb(198, 255, 247);
+        }
+        .subject{
+            height: 350px;
+            background-color: lightsteelblue;
+        }
+        .content{
+            height: 380px;
+            background-color: lightpink;
+        }
+        .sub{
+            height: 200px;
+            background-color: lavender;
+        }
+        .footer{
+            height: 200px;
+            background-color: rgb(237, 87, 137);
+        }
+        /* 넓이가  800xp보다 초과일때 이 화면  */
+        @media screen and (min-width:800px) {
+            .header{
+                height: 60px;
+            }
+            .main-img{
+                height: 550px;
+            }
+            .subject{
+                height: 320px;
+            }
+            .content{
+                width: 50%;
+                float: left;
+                height: 400px;
+            }
+            .sub{
+                width: 50%;
+                float: right;
+                height: 400px;
+            }
+            /* footer가 안나오ㅏ! 그럼 clear쓰면 됨 */
+            .footer{
+                clear: both;
+                height: 200px;
+
+            }
+        }
+
+
+        /* 넓이가 1200px 이하일때 적용 . */
+        @media screen and (max-width:1200px) {
+            .header{
+                height: 60px;
+            }
+            .main-img{
+                height: 550px;
+            }
+            .subject{
+                width: 50%;
+                float: left;
+                height: 400px;
+            }
+            .content{
+                width: 50%;
+                float: right;
+                height: 200px;
+            }
+            .sub{
+                width: 50%;
+                float: right;
+                height: 200px;
+            }
+            .footer{
+                clear: both;
+                height: 200px;
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0l-3-3m3 3l3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+      </svg>
+      </div>
+    <div class="main-img"></div>
+    <div class="subject"></div>
+    <div class="content"></div>
+    <div class="sub"></div>
+    <div class="footer"></div>
+</body>
+</html>

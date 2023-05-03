@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .round{
+            /* round 위치 왼쪽 */
+            float: left;
+        }
+        .box{
+            /* 메뉴박스 가로 250, 세로 50  */
+            /* 텍스트 위치 중앙 */
+            /* 세로 위치 맞추기 line-height */
+            width: 250px;
+            height: 50px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 50px;
+        }
+        .box:hover{
+            background-color: rgba(255, 218, 105, 0.543);
+        }
+        a{
+            text-decoration: none;
+        }
+        .pic{
+            width: calc(100% - 260px);
+            height: 800px;
+            float: right;
+            background-repeat: no-repeat;
+        }
+        img{
+            width: 100%;
+        }
+        .s-box{
+            border-bottom: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="round">
+        <div class="box s-box"><a href="" >메뉴1</a></div>
+        <div class="box s-box"><a href="" >메뉴2</a></div>
+        <div class="box s-box"><a href="" >메뉴3</a></div>
+        <div class="box"><a href="">메뉴4</a></div>
+    </div>
+    <div class="pic"> <img src="/image/춘식이1.png" alt=""> </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요일구하기</title>
+</head>
+<body>
+    <h1>
+        오늘은?
+    </h1>
+    <button type="button" onclick="요일구하기();">Today</button>
+    <h3 id="main">
+        <!-- 오늘날짜와 요일출력 -->
+        <!-- 2023-04-13(목) -->
+    </h3>
+    <script>
+        function 요일구하기(){
+        let now = new Date();
+        console.log(now);
+
+        // 오늘 날짜
+        let today = now.toLocaleDateString();
+        let year = now.getFullYear();
+        let month = now.getMonth();
+        let day = now.getDate();
+    
+        let num = now.getDay();
+        let today2;
+        switch(num){
+            case 0: today2 ='일';
+            break;
+            case 1: today2 ='월';
+            break;
+            case 2: today2 ='화';
+            break;
+            case 3: today2 ='수';
+            break;
+            case 4: today2 ='목';
+            break;
+            case 5: today2 ='금';
+            break;
+            case 6: today2 ='토';
+            break;
+        }
+        console.log(today2);
+
+        document.getElementById('main').innerText = 
+        `${year}-${month}-${day}(${today2})`;
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+/* 공통적인 속성을 먼저 한다. */
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-width: 900px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    /* 앞에 똥글뱅이 사라짐 */
+    list-style: none;
+}
+
+.navbar {
+    height: 60px;
+    padding: 10px 30px;
+    background-color: white;
+}
+
+.navbar>a {
+    /* 왼쪽상단에 있는 이름 */
+    height: 60px;
+    font-size: 40px;
+    float: left;
+    /* 정렬..?하구싶을때 */
+    line-height: 60px;
+    vertical-align: middle;
+    /* font-weight: 700px; */
+    color: orange;
+    font-family: 티키타카체;
+}
+
+.navbar>ul {
+    float: right;
+
+}
+
+.navbar>ul>li {
+    /* 옆으로 가게끔 만들어주겠다 */
+    margin-left: 30px;
+    display: inline;
+    line-height: 30px;
+    vertical-align: middle;
+
+}
+
+.navbar>ul>li>a {
+    /* 글자모양 */
+    font-size: 15px;
+    color: gray;
+}
+
+.header {
+    /* main 이미지 */
+    width: 100%;
+    height: 720px;
+    background-image: url(/image/02.\ DJ\ 라이언의\ 여유로운\ 휴일\,\ 집에서\ 뒹굴뒹굴.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin: 0px 0;
+}
+
+h1 {
+    /* 중간제목 */
+    margin: 60px 0;
+    font-size: 25px;
+    text-align: center;
+    color: rgba(93, 93, 93, 0.931);
+    font-family: 'NeoDunggeunmoPro-Regular';
+
+}
+
+.product {
+    /* 제품 상세페이지 나오는 라인 */
+    /* 선줄건지, 마진 어떻게 줄건지 %로 주면 줄인다. */
+    /* 그림사이즈 300px 마진 20 */
+    width: 960px;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    text-align: center;
+
+}
+
+.product>a {
+    /* inline을 block으로 바꿔줌 */
+    display: block;
+    float: left;
+    /* 상품마다 오른쪽 20씩 마진 */
+    margin-right: 20px;
+    margin-bottom: 40px;
+}
+
+.product>a:nth-child(3n) {
+    /* 3번째꺼 0을 줘야지 뒤로 안빠지고 들어감 */
+    margin-right: 0;
+}
+
+/* 바로 자식아니고 손자 */
+.product>a img {
+    width: 300px;
+    height: 300px;
+    /* border: 1px solid rgb(155, 155, 155); */
+    box-shadow: 5px 5px 10px rgb(213, 213, 213);
+    border-radius: 50px;
+    
+
+}
+/* 마우스 갖다댔을때 */
+/* 이미지가 흰색 배경일 경우 background 설정안됨.*/
+.product>a img:hover{
+    box-shadow: 5px 5px 10px orange;
+}
+.product>a>div{
+    position: relative;
+}
+.product .text{
+    position: absolute;
+    top: 250px;
+    left: 100px;
+    display: none;
+}
+.product>a img:hover ~.text{
+    display: block;
+}
+
+.product ul {
+    padding: 0;
+    text-align: center;
+    margin: 20px auto 0px;
+}
+
+.product ul li {
+    font-size: 18px;
+    margin: 10px;
+    font-family: 'NeoDunggeunmoPro-Regular';
+}
+
+.footer {
+    clear: both;
+    height: 100px;
+}
+
+.footer>p {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    text-align: center;
+}
+.footer>ul{
+    padding: 0;
+    text-align: center;
+}
+
+.footer>ul>li {
+    display: inline;    
+}
+
+.footer ul li a img{
+    width: 50px;
+    height: 50px
+}
+
+
+.up{
+    position: fixed;
+    width: 60px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+}
+.up span{
+    font-size: 40px;
+    color: rgb(91, 91, 91);
+    float: right;
+    background-color: rgb(208, 208, 208);
+    border-radius: 20px;
+
+}
+
+
+
+
+
+
+@font-face {
+    font-family: 티키타카체;
+    src: url(/font/티키타카체/TiquiTaca-Regular.otf);
+}
+
+@font-face {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}

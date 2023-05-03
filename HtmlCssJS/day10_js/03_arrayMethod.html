@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const ourClass = [];
+        ourClass[ourClass.length] = '홍길동';
+        ourClass[ourClass.length] = '임꺽정';
+        ourClass[ourClass.length] = '이순신';
+        ourClass[ourClass.length] = '고길동';
+        console.log(ourClass);
+
+        ourClass.push('지우');
+        console.log(ourClass);
+
+        ourClass.push({n:10, m: 'f'});
+        console.log(ourClass);
+
+        // 배열의 마지막 원소 제거 
+        ourClass.pop();
+        console.log(ourClass);
+
+        //  배열의 가장 앞에 원소를 추가
+        ourClass.unshift('김철수');
+        console.log(ourClass);
+
+        ourClass.unshift('바둑이');
+        console.log(ourClass);
+
+        ourClass.shift();
+        console.log(ourClass);
+
+        ourClass.unshift('지효');
+        console.log(ourClass);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            /* margin: 0;
+            padding: 0; */
+            background-color: #2fbfcc;
+        }
+
+        .box {
+            padding-top: 20px;
+            text-align: center;
+            width: 400px;
+            height: 300px;
+            background-color: azure;
+            border-radius: 10px;
+            margin: 300px auto;
+        }
+
+        .box>div {
+            padding: 10px 0px 10px;
+            /* text-align: center; */
+        }
+
+        button {
+            width: 330px;
+            height: 50px;
+            background-color: #2fbfcc;
+            border: none;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .links {
+            margin-top: 30px;
+            font-size: 13px;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 10px;
+            width: 330px;
+            height: 50px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <div class="box">
+            <div class="id">
+                <input type="text" class="text-field" name="id" placeholder="아이디">
+            </div>
+            <div class="pw">
+                <input type="password" class="text-field" name="pw" placeholder="비밀번호">
+            </div>
+            <div class="login">
+                <input type="submit" class="btn-input" value="로그인" disabled>
+            </div>
+    </form>
+    <div class="links">
+        <a href="#">비밀번호를 잊어버리셨나요</a>
+    </div>
+    </div>
+
+    <script>
+
+        const inputs = document.querySelectorAll('.text-field');
+        const btninput = document.querySelector('.btn-input');
+        let check = false;
+
+        // input[0]번지는 아이디 규칙
+        // event input : input 요소의 값이 입력(변경)되었을때
+
+        // 
+        // inputs[0].addEventListener('input', () => {
+        //     // pw의 값을 가져와
+        //     // pw를 먼저 적는 사람이 있으니 값이 있는지 없는지 체크 
+        //     let upw = document.getElementsByClassName('text-field')[1].value;
+        //     if (upw.length > 7) {
+
+        //         let uid = document.getElementsByClassName('text-field')[0].value;
+        //         // 7보다 크면 버튼의 활성화 조건 만족
+        //         if (uid.length > 7) {
+
+        //             // setProperty를 이용한것.
+        //             btninput.style.setProperty('background-color', '#2fbfcc');
+        //             // 다른방법
+        //             // btn.style.backgroundColor = '#2fbfcc';
+
+        //             // disabled 비활성화하기 
+        //             btninput.disabled = false;
+        //         }
+        //     } else {
+        //         btninput.style.setProperty('background-color', '#aaa');
+        //         btninput.disabled = true;
+        //     }
+
+        // })
+
+        inputs[0].addEventListener('input', () => {
+            let upw = document.getElementsByClassName('text-field')[1].value;
+            let uid = document.getElementsByClassName('text-field')[0].value;
+            console.log(uid);
+            if (check) {
+
+                if (uid.length > 7) {
+                    btninput.style.setProperty('background-color', '#2fbfcc');
+                    btninput.disabled = false;
+                } else {
+                    btninput.style.setProperty('background-color', '#aaa');
+                    btninput.disabled = true;
+                }
+
+            } else {
+                btninput.style.setProperty('background-color', '#aaa');
+                btninput.disabled = true;
+            }
+
+        })
+
+
+
+        // input [1]번지는 패스워드 규칙
+        // inputs[1].addEventListener('input', () => {
+        //     // id의 값을 가져와
+        //     // id를 먼저 적는 사람이 있으니 값이 있는지 없는지 체크 
+        //     let uid = document.getElementsByClassName('text-field')[0].value;
+
+        //     if (uid.length > 7) {
+        //         let upw = document.getElementsByClassName('text-field')[1].value;
+
+        //         // 정규식 패턴 체크 과정
+        //         // .test(upw) 패스워드가 일치하면 true 아니면 false 
+        //         let reg = /^(?=.*\d).{4,8}$/.test(upw);
+        //         // pw 규칙이 어떤건지 설명을 적어주는게 좋다. 
+        //         console.log(upw, reg);
+
+        //         if ((upw.length > 4 && upw.length < 9) && reg) {
+        //             btninput.style.setProperty('background-color', '#2fbfcc');
+        //             btninput.disabled = false;
+        //         }
+        //     } else {
+        //         btninput.style.setProperty('background-color', '#aaa');
+        //         btninput.disabled = true;
+        //     }
+
+        // })
+
+        inputs[1].addEventListener('input', () => {
+
+            let uid = document.getElementsByClassName('text-field')[0].value;
+            let upw = document.getElementsByClassName('text-field')[1].value;
+            let reg = /^(?=.*\d).{4,8}$/.test(upw);
+            console.log(upw, reg);
+
+            if (uid.length > 7) {
+
+                if (reg) {
+                    btninput.style.setProperty('background-color', '#2fbfcc');
+                    btninput.disabled = false;
+                    check = true;
+
+                } else {
+                    btninput.style.setProperty('background-color', '#aaa');
+                    btninput.disabled = true;
+                    check = false;
+
+                }
+            } else {
+                btninput.style.setProperty('background-color', '#aaa');
+                btninput.disabled = true;
+                check = false;
+
+            }
+
+        })
+
+
+    </script>
+</body>
+
+</html>

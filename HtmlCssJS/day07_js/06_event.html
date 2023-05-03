@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <button type="button" onclick="javascript:evenFunc();">클릭1</button>
+    <button type="button" onclick="evenFunc2(100)">클릭2</button>
+    <button type="button" onclick="alert('이미 선점된 좌석입니다.');">alert</button>
+    <button type="button" id="testBtn">testButton</button>
+    <button type="button" onclick="alert(`축하드립니다! 로또1등 당첨`);">버튼3</button>
+    <button type="button" id="button4">button4</button>
+    
+
+    <!-- 결과가 나타나는 위치 여기다 찍어. -->
+    <h1 id="printResult"></h1> 
+
+    <script>
+        function evenFunc(){
+            // 화면영역에서 id영역값을 가져올거에요 id가 뭐냐 printResult
+            let printResult = document.getElementById('printResult');
+            printResult.innerText = '클릭1 버튼을 클릭하면 폭탄이 터집니다. 펑~!!!@!@@!';
+        }
+
+        // 매개변수 없어도 됨 그치만 넣어봅니다. 매개변수 나오는지 궁금해서 붙여봄,.,
+        function evenFunc2(num){
+            let printResult = document.getElementById('printResult');
+            printResult.innerHTML = `<span style="color:red;"> span 태그 사용 했어요. ${num}</span>`+num;
+        }
+        // 버튼한테 이벤트가 발생하도록 listener를 씌워주는것
+        document.getElementById('testBtn').addEventListener('click',()=>{
+            alert('testButton을 클릭해서 띄운 alert~!!');
+        })
+
+        document.getElementById('button4').addEventListener('click',()=>{
+            alert(`감사합니다!!!`);
+        })
+
+
+    </script>
+
+</body>
+</html>

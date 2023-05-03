@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'GmarketSansMedium';
+        }
+
+        #wapper {
+            width: 700px;
+            /* 중앙정렬 */
+            margin: 0 auto;
+            background-color: rgb(230, 219, 254);
+            border-radius: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        form {
+            text-align: center;
+
+        }
+
+        #item {
+            margin: 10px 0px 10px 10px;
+            border: none;
+            outline: none;
+            width: 300px;
+            height: 42px;
+            padding-left: 10px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+
+        #add {
+            /* padding: 0px 15px; */
+            width: 40px;
+            height: 42px;
+            border: none;
+            background-color: rgb(88, 79, 107);
+            color: white;
+            font-size: 18px;
+            border-radius: 10px;
+        }
+
+        #listSet {
+            width: 500px;
+            text-align: left;
+            margin: 10px auto;
+            padding: 20px;
+        }
+
+        ul {
+            padding: 0px;
+            margin: 0px;
+            list-style: none
+        }
+
+        ul li {
+            position: relative;
+            padding: 12px 8px 12px 20px;
+            margin: 10px 55px 10px 55px;
+            background-color: rgb(216, 200, 251);
+            font-family: 'GmarketSansMedium';
+        }
+
+        ul>li:hover {
+            background-color: rgb(161, 161, 161);
+        }
+
+        .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 12px 16px;
+            border: none;
+        }
+
+        .close:hover {
+            background-color: black;
+            color: white;
+        }
+
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wapper">
+        <h2>여행 준비물 점검 목록</h2>
+        <form>
+            <input type="text" id="item" placeholder="내용을 입력해주세요!">
+            <button type="button" id="add" onclick="addList()">+</button>
+        </form>
+        <div id="listSet">
+            <ul id="itemList2"></ul>
+        </div>
+    </div>
+
+    <script>
+        let itemList = []; // 내용이 들어갈 배열
+        let item = document.getElementById('item'); // 내가 입력한 내용
+        let str = ''; // input값이 들어갈 변수
+        let count = 0; // 넌 뭐냐 
+
+
+        // 리스트에 추가하기
+        function addList() {
+            str = document.getElementById('item').value; // input 값 가져오기
+            itemList.push(str); // 배열에 input값 넣기
+            let list = ''; // 프린트를 위한 변수
+            // list에 li태그를 만든 후 input값을 넣고, span태그를 만들어 삭제만들기
+            // 삭제 클릭시 removeList가 실행 됨.
+            list += `<li id="${count}">${str} <span class='close' onclick="removeList(${count})"> 삭제 </span></li>`;
+            count++;
+
+            // list 출력 
+            document.getElementById('itemList2').innerHTML += `${list}`;
+
+            // input상자 비우기
+            item.value = '';
+
+        }
+
+        // 리스트에서 삭제하기
+        function removeList(count) {
+            let ul= document.getElementById('itemList2'); 
+            console.log(ul); // ul불러오면 리스트들이 콘솔창에 찍힘.
+            let liNum= document.getElementById(count);  // count를 불러오는거같음  
+            console.log(liNum); // 내가 삭제버튼을 누른 count가 출력 됨
+            ul.removeChild(liNum); // 해당되는 li삭제하기 
+
+        }
+
+
+    </script>
+</body>
+
+</html>

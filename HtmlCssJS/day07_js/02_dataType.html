@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dataType</title>
+</head>
+<body>
+    <script>
+        let num = 1234;
+        let str = "문자";
+        let bool = true;
+        let obj1 = new Object(); // new Object  자바 스크립트에서 제공하는 내장객체
+        let obj2 = {};
+        let arr = [1,2,3];
+        let arr2 = new Array(); // 자바스크립트에서 제공하는 Array 객체
+        let undi = undefined;
+        let nul = null;
+        let nudi2;
+
+        // num의 타입을 알아보고 싶다.
+        console.log(`num : ${typeof num}`);
+        console.log(`nan : ${typeof NaN}`);
+        console.log(`str : ${typeof str}`);
+        console.log(`bool : ${typeof bool}`);
+        console.log(`obj1 : ${typeof obj1}`);
+        console.log(`obj2 : ${typeof obj2}`);
+        console.log(`arr : ${typeof arr}`);
+        console.log(`arr2 : ${typeof arr2}`);
+        console.log(`undi : ${typeof undi}`);
+        console.log(`undi2 : ${typeof undi2}`);
+        console.log(`nul : ${typeof nul}`);
+    </script>
+    <script>
+        let num1 = 10;
+        let num2 = '10';
+        console.log('num1 == num2 : ', num1 == num2);
+        console.log('num1 === num2 : ', num1 === num2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            animation: skew 3s 5;
+        }
+        @keyframes translate{
+            0%{ transform: translate(0, 0);}
+            50%{ transform: translate(50px, 50px);}
+            100%{transform: translate(0, 0);}
+        }
+        @keyframes scale{
+           0%{transform: scale(1, 1);}
+           50%{transform: scale(2, 2);}
+           100%{transform: scale(1, 1);}
+        }
+        @keyframes rotate{
+            0%{transform: rotate(0deg);}
+            50%{transform: rotate(180deg);}
+            100%{transform: rotate(0deg);}
+        }
+        @keyframes skew{
+            0%{transform: skew(0deg, 0deg);}
+            30%{transform: skewX(50deg);}
+            50%{transform: skew(0deg, 0deg);}
+            80%{transform: skewY(50deg);}
+            100%{transform: skew(0deg, 0deg);}
+        }
+
+        .font{
+            transition: font-size 2s;
+            font-size: 20px;
+        }
+        .font:hover{
+            font-size: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="/image/토깽이.jpg" alt="" class="box">
+    <div class="font">hello</div>
+</body>
+</html>

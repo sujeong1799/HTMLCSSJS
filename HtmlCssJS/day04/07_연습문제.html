@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            position: relative;
+        }
+        .round{
+            position: relative;
+            margin: 10px auto;
+            width: 150px;
+            height: 250px;
+            border: 1px solid black;
+        }
+        .no1{
+
+            position: absolute;
+            width: 80%;
+            height: 15%;
+            border: 1px solid black;
+            top: 5%;
+            left: 50%;
+            transform: translate(-50%);
+            text-align: center;
+        }
+        .no2{
+            position: relative;
+            width: 80%;
+            height: 50%;
+            border: 1px solid black;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%);
+            margin-bottom: 20px;
+
+        }
+        .no3{
+            position: absolute;
+            width: 80%;
+            height: 15%;
+            border: 1px solid black;
+            bottom: 5%;
+            left: 50%;
+            transform: translate(-50%);
+            text-align: center;
+        }
+        .small{
+            width: 50px;
+            height: 50px;
+            float: left;
+            left: 50%;
+            transform: translate(-50%);
+            box-shadow: 2px 2px 2px rgb(0, 0, 0);
+            
+        }
+        .red{
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            background-color: red;
+            z-index: 3;
+        }
+        .green{
+            position: absolute;
+            top: 40px;
+            left: 60px;
+            background-color: green;
+            z-index: 2;
+        }
+        .blue{
+            position: absolute;
+            top: 60px;
+            left: 80px;
+            background-color: blue;
+            z-index: 1;
+        }
+
+        
+    </style>
+</head>
+<body>
+        <div class="round">
+           <div class="box no1"> text </div>
+           <div class="box no2">
+               <div class="small red"></div>
+               <div class="small green"></div>
+               <div class="small blue"></div>
+           </div>
+            <div class="box no3"> text </div>
+      </div>
+</body>
+</html>

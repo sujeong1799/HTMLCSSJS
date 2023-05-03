@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul >
+        <li class="list" data-test="li_last" data-itemCategory="litop"></li>
+    </ul>
+
+    <script>
+        let li_last_tag = document.querySelectorAll('.list');
+        console.log(li_last_tag);
+        console.log(li_last_tag[0].dataset.test);
+        let liLast = li_last_tag[0].dataset.test;
+        // if()...
+
+        console.log(li_last_tag[0].dataset.itemcategory); // 대문자 쓰면 안됨
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .p-box{
+        background-color: rgba(187, 255, 0, 0.364);
+    }
+    .box{
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+
+        /*1.  float를 넣으면 배경색이 사라짐 */
+        /*3. 밑에 ::after를 넣으면 색다시 나옴 */
+        float: right; 
+    }
+    /*2. p-box::after를 구성하여 p-box 뒤에 빈 컨텐츠 하나를 추가하고 
+    display: block로 변경하여 높이를 잡음*/
+    .p-box::after{
+        content: "";
+        clear: both;
+        display: block;
+    }
+    .a-box{
+        width: 500px;
+        height: 500px; 
+        /* height 값을 주면 after 안줘도 된다. */
+        border: 2px solid black;
+    }
+
+    .box1{
+        /* %의 기준은 부모의 기준 */
+        width: 50%;
+        height: 100%;
+        background-color: rgba(255, 255, 0, 0.588);
+        float: left;
+    }
+    .box2{
+        width: 50%;
+        height: 100%;
+        background-color: rgb(179, 255, 236);
+        float: right;
+    }
+    /* .a-box::after{
+        content: "";
+        clear: both;
+        display: block;
+    } */
+
+    /* 
+    calc(식)
+    - 단위가 다른 값들을 계산해야 할 때 사용
+    - 연산자 앞뒤로 띄어쓰기 해야함
+    */
+    .b-box{
+        width: 500px;
+        height: 500px;
+        border: 2px solid black;
+    }
+
+    .box3{
+        width: calc(100% /3);
+        height: 100%;
+        background-color: lavender;
+        float: left;
+    }
+    .box4{
+        width: calc(100% /3);
+        height: 100%;
+        background-color: lavenderblush;
+        float: left;
+    }
+    .box5{
+        width: calc(100% /3);
+        height: 100%;
+        background-color: rgb(158, 231, 255);
+        float: right;
+    }
+    .b-box::after{
+        content: "";
+        clear: both;
+        display: block;
+    }
+
+
+
+
+</style>
+<body>
+    <div class="p-box">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+    </div>
+
+    <div class="a-box">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+    </div>
+
+    <div class="b-box">
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+    </div>
+</body>
+</html>

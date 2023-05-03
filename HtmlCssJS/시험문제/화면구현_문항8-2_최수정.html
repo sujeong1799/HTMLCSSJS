@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배달의 민족</title>
+    <style>
+        @font-face {
+            font-family: IBM Plex Sans KR;
+            src: url(/font/IBM_Plex_Sans_KR/IBMPlexSansKR-Regular.ttf);
+        }
+        body{
+            font-family: IBM Plex Sans KR;
+            background-color: #2fbfcc;
+        }
+        div{
+            text-align: center;
+        }
+        .header{
+            margin: 50px;
+        }
+        .header>h1{
+            font-size: 60px;
+        }
+        .header>h3{
+            font-size: 35px;
+        }
+        .menu{
+            width: 300px;
+            background-color: white;
+            /* div는 마진 auto설정하면 가운데로 온다. */
+            margin: auto;
+            margin-bottom: 50px;
+            border-radius: 10px;
+        }
+
+        #sushi{
+            width: 300px;
+            height: 200px;
+            background-image: url(/image/초밥.jpg);
+            background-size: 300px 200px;
+            border-radius: 10px 10px 0px 0px;
+        }
+        #burger{
+            width: 300px;
+            height: 200px;
+            background-image: url(/image/햄버거.jpg);
+            background-size: 300px 200px;
+            border-radius: 10px 10px 0px 0px;
+        }
+        #pasta{
+            width: 300px;
+            height: 200px;
+            background-image: url(/image/파스타.jpg);
+            background-size: 300px 200px;
+            border-radius: 10px 10px 0px 0px;
+        }
+        #bibimbab{
+            width: 300px;
+            height: 200px;
+            background-image: url(/image/비빔밥.jpg);
+            background-size: 300px 200px;
+            border-radius: 10px 10px 0px 0px;
+        }
+        .menu>div>h2{
+            margin: 10px;
+        }
+        /* 마지막에 있는 div박스 */
+        .menu>div:last-child{
+            padding: 10px 30px;
+        }
+
+        /* 메뉴안에 있는 div안에 있는 p중 마지막 p */
+        .menu>div>p:last-child{
+            color: blue;
+        }
+        .menu>div>p:last-child:hover{
+            transform: scale(1.5, 1.5);
+        }
+        .pic{
+            width: 100px;
+            height: 100px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- <div class="pic">
+        <img src="/image/배민.png" alt="">
+    </div> -->
+    <div class="header">
+        <h1>코딩의 민족</h1>
+        <h3>난 코딩할 때가 제일 멋있어</h3>
+    </div>
+    <div class="menu">
+        <div id="sushi"></div>
+        <div>
+            <h2>맛있는 초밥</h2>
+            <p>
+                주머니가 가벼운 당신의 마음까지<br>
+                 생각한 착한 가격!
+            </p>
+            <p>바로결제</p>
+        </div>
+    </div>
+    <div class="menu">
+        <div id="burger"></div>
+        <div>
+            <h2>햄버거</h2>
+            <p>
+                치즈 한 장 올라간 우리가게<br>
+                BEST 함.바.그
+            </p>
+            <p>바로결제</p>
+        </div>
+    </div>
+    <div class="menu">
+        <div id="pasta"></div>
+        <div>
+            <h2>파스타</h2>
+            <p>
+                로제파스타? 아닙니다.<br>
+                고기듬뿍 볼로네제 파스타! 
+            </p>
+            <p>바로결제</p>
+        </div>
+    </div>
+    <div class="menu">
+        <div id="bibimbab"></div>
+        <div>
+            <h2>비빔밥</h2>
+            <p>
+                since1905 원조비빔밥
+            </p>
+            <p>바로결제</p>
+        </div>
+    </div>
+</body>
+</html>

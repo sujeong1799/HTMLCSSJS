@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set type</title>
+</head>
+<body>
+    <script>
+        const testSet = new Set(['html', 'css', 'js']);
+        console.log(testSet);
+ 
+        // 추가하기
+        testSet.add('react');
+        console.log(testSet);
+
+        // size 확인
+        console.log(testSet.size);
+
+        // 삭제하기
+        testSet.delete('html');
+        console.log(testSet);
+
+        // 값이 있는지 확인해보기
+        console.log(testSet.has('html'));
+        console.log(testSet.has('css'));
+
+        console.log(`--------------------------`);
+        testSet.forEach(function(value, index, self){
+            console.log(index, value, self);
+        })
+
+        // entries, keys, values의 리턴타입이 SetIterator -> set의 상위 인터페이스 규격
+        // entries()
+        console.log(testSet.entries());
+        
+        //keys()
+        console.log(testSet.keys());
+
+        // values()
+        console.log(testSet.values());
+
+        // 에러남
+        // testSet.keys().forEach(function(value){
+        //     console.log(value);
+        // })
+
+        // Iterrator은 for of로 찍어야한다?
+
+        for(const iter of testSet.entries()){
+            // iter 속성은 배열 
+            iter.forEach(function(v, i, s){
+                console.log(i, v);
+            })
+        }
+        
+        // keys() / values() => for of 를 사용하여 탐색, 콘솔에 출력
+        for(const a of testSet.keys()){
+                console.log(a);
+        }
+
+        for(const iter of testSet.values()){
+                console.log(iter);
+        }
+
+        testSet.clear(); 
+        console.log(testSet);
+        console.log(testSet.size);
+
+
+
+    </script>
+</body>
+</html>

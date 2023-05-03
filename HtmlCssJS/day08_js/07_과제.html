@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            border: 1px solid black;
+        }
+        table{
+            display: none;
+        }
+        table td{
+            text-align: center;
+            width: 200px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- form에서 데이터를 입력시키고 전송할거임 -->
+    <form action="">
+        이름 : <input type="text" id="name"><br>
+        거주지 : <input type="text" id="addr"><br>
+        좋아하는 리스트<br>
+        리스트 1: <input type="text" id="favor1"><br>
+        리스트 2: <input type="text" id="favor2"><br>
+        리스트 3: <input type="text" id="favor3"><br>
+        이메일 : <input type="email" id="email"><br>
+        Pet 소유여부 : <input type="text" id="pet" placeholder="Y/N"><br>
+        지금 가장 원하는 것 : <input type="text" id="wanna"><br>
+        <button type="button" onclick="getDatas();">객체로 전송</button>
+    </form>
+
+    <h3>전송받은 데이터 출력 <button type="button" onclick="print();">출력</button></h3>
+    
+
+    <!-- 데이터 출력 위치 -->
+    <table id="tab">
+        <tr>
+            <td>이름</td>
+            <td id="tbName"></td>
+        </tr>
+        <tr>
+            <td>거주지</td>
+            <td id="tbAddr"></td>
+        </tr>
+        <tr>
+            <td>좋아하는 리스트</td>
+            <td>
+               <ol id="favors">
+               </ol>
+            </td>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            <td id="tbEmail"></td>
+        </tr>
+        <tr>
+            <td>Pet 소유여부</td>
+            <td id="tbPet"></td>
+        </tr>
+        <tr>
+            <td>지금 가장 원하는 것</td>
+            <td id="tbWanna"></td>
+        </tr>
+    </table>
+
+    <!-- 
+    전송하면 (id 다 생성)
+    
+    받아서~ (비어있는 객체 만들어놓고!!!!! 데이터 가져와서 dataObj에 저장)
+    출력하셈
+    테이블태그로 출력
+    테이블 기본 td인데 좋아하는 리스튼 ul태그 li로 만들어서 넣어야함 -->
+
+    <script>
+
+        const save = {
+            name: "",
+            addr: "",
+            favor: {
+                favor1: "",
+                favor2: "",
+                favor3: "",
+
+            },
+            email: "",
+            pet: "",
+            wanna: "",
+        }
+
+        function getDatas() {
+            // 값을 가져와서
+            let name = document.getElementById('name').value;
+            let addr = document.getElementById('addr').value;
+            let favor1 = document.getElementById('favor1').value;
+            let favor2 = document.getElementById('favor2').value;
+            let favor3 = document.getElementById('favor3').value;
+            let email = document.getElementById('email').value;
+            let pet = document.getElementById('pet').value;
+            let wanna = document.getElementById('wanna').value;
+
+            if(!(pet=='Y' || pet=='N'|| pet=='y' || pet=='n')){
+                alert('Pet 소유여부를 Y 또는 N으로 입력해주세요');
+                location.reload();
+            }
+
+            save.name = name;
+            save.addr = addr;
+            save.favor1 = favor1;
+            save.favor2 = favor2;
+            save.favor3 = favor3;
+            save.email = email;
+            save.pet = pet;
+            save.wanna = wanna;
+        }
+
+        function print(){
+            document.getElementById('tab').style.display = 'block';
+
+            //오브젝트에 넣겠다. // inner안에 뭐 넣어야할지 모를때 그냥 HTMl넣으셈
+           document.getElementById('tbName').innerHTML = save.name;
+           document.getElementById('tbAddr').innerHTML = save.addr;
+           document.getElementById('tbEmail').innerHTML = save.email;
+           document.getElementById('tbPet').innerHTML = save.pet;
+           document.getElementById('tbWanna').innerHTML = save.wanna;
+           document.getElementById('favors').innerHTML = `<li> ${save.favor1} </li><li>${save.favor2}</li><li>${save.favor3}</li>`;
+        }   
+        
+
+    </script>
+</body>
+
+</html>

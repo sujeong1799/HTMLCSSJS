@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" onclick="play(1)">
+        <img src="/image/가위.png" alt="">
+    </button>
+
+    <button type="button" onclick="play(2)">
+        <img src="/image/바위.jpg" alt="">
+    </button>
+
+    <button type="button" onclick="play(3)">
+        <img src="/image/보.png" alt="">
+    </button>
+
+
+    <h3 id="result">
+
+    </h3>
+
+    <script>
+        let playerNum; // 플레이어 숫자표현
+        let playerStr; // 플레이어 문자표현
+        let comNum = ''; // 컴 숫자표현
+        let comStr = ''; // 컴 문자표현
+        let win = 0; //승리
+        let draw = 0; // 무승부
+        let lose = 0; //패배
+        let count = 0; // 횟수
+        let late = 0; //승률
+        let now = '';
+
+
+        function play(playerNum) {
+
+            switch (playerNum) {
+                case 1: playerStr = '가위'; break;
+                case 2: playerStr = '바위'; break;
+                case 3: playerStr = '보'; break;
+            }
+
+            //컴랜덤
+            comNum = Math.floor(Math.random() * 3) + 1;
+
+            switch (comNum) {
+                case 1: comStr = '가위'; break;
+                case 2: comStr = '바위'; break;
+                case 3: comStr = '보'; break;
+            }
+
+
+            //승패여부
+            count++;
+            if (playerNum == comNum) {
+                draw++;
+            } else {
+                if (playerNum == 1 && comNum == 2) {
+                    lose++;
+
+                } else if (playerNum == 1 && comNum == 3) {
+                    win++;
+                }
+
+                if (playerNum == 2 && comNum == 1) {
+                    win++;
+                } else if (playerNum == 2 && comNum == 3) {
+                    lose++;
+                }
+
+                if (playerNum == 3 && comNum == 1) {
+                    lose++;
+                } else if (playerNum == 3 && comNum == 2) {
+                    win++;
+                }
+
+            }
+            if (playerNum - comNum == -2 || playerNum - comNum == 1) {
+                now = '이겼습니다.';
+            } else if (playerNum - comNum == -1 || playerNum - comNum == 2) {
+                now = '졌습니다.';
+            } else {
+                now = '비겼습니다.';
+            }
+
+            //승률 계산
+            late = ((win / count) * 100).toFixed(2);
+
+
+            document.getElementById('result').innerHTML =
+                `나 : ${playerStr}<br> 컴 : ${comStr}<br> ${now}<br> 현재 전적<br> 승 : ${win}<br>
+             패 : ${lose}<br> 무 : ${draw}<br> 횟수 : ${count} <br> 승률계산 : ${late}`;
+        }
+
+
+    </script>
+</body>
+
+</html>

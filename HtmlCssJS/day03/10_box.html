@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box속성</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+
+        .box1{
+            /* 왼쪽패딩 20 + 오른쪽20 + 왼쪽선 1 + 오른쪽선 1 = 100px */
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .box2{
+            /* 20 + 20 + 1 + 1 + 100 = 142px */
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            padding: 20px;
+            box-sizing: content-box;
+        }
+        .box3{
+            width: 100px;
+            height: 30px;
+            padding-top: 5px;
+            font-family: 'Press Start 2P', cursive;
+            box-sizing: border-box;
+            font-size: 15px;
+            text-align: center;
+            color: white;
+            background-color: rgba(36, 165, 36, 0.753);
+            border-radius: 10px;
+            box-shadow: 0px 5px 5px gray;
+            text-decoration: none;
+
+        }
+
+        .box3:hover{
+            background-color: rgba(4, 164, 34, 0.841);
+            color: rgba(0, 0, 0, 0.862);
+        }
+        a{
+            text-decoration: none;
+        }
+
+    /* box를 클릭하면 naver로 이동하는 버튼 마우스 올리면 변경*/
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+<br>
+        <a href="http://www.naver.com"> 
+            <div class="box3"> naver </div></a>
+
+</body>
+</html>

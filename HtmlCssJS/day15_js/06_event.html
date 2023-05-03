@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Event</title>
+</head>
+<body>
+    <div id="container">
+        <img id="pic" src="/image/토깽이.jpg" alt="">
+    </div>
+
+    <script>
+        // 마우스춘식 이미지에 마우스를 올리면 다른 그림으로 변경
+        // 마우스가 해당 영역을 벗어나면 기존 그림으로 다시 변경
+        let pic = document.getElementById('pic');
+
+        container.addEventListener('mouseover', function(){
+            pic.setAttribute('src','/image/춘식.jpg');       
+        })
+
+        container.addEventListener('mouseout', function(){
+            pic.setAttribute('src','/image/토깽이.jpg');
+        })
+    </script>
+</body>
+</html>

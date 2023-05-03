@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+
+    <form action="">
+        <fieldset>
+            이름: <input type="text" id="name"><br>
+            국어: <input type="text" id="kor"><br>
+            영어: <input type="text" id="eng"><br>
+            수학: <input type="text" id="math"><br>
+            <button type="button" onclick="점수계산();">계산</button>
+        </fieldset>
+    </form>
+    <!-- 점수와 결과위치 -->
+    <ol id="ol">
+
+    </ol>
+
+    <script>
+        function 점수계산() {
+            // const second = 2;
+            let name = document.getElementById('name').value;
+            let kor = document.getElementById('kor').value;
+            let eng = document.getElementById('eng').value;
+            let math = document.getElementById('math').value;
+            
+            // input창에 입력된 값은 String으로 입력됨 값을 int로 바꾸기
+            kor = parseInt(kor); // 옳지않은값을 NaN으로 표시하고싶을때 number을 쓴다
+            eng = parseInt(eng);
+            math = parseInt(math);
+            let sum = kor + eng + math;
+            // let avg = (sum / 3).toFixed(second);
+            let avg = Math.round(sum/3); //정수 값으로 반올림된다.
+
+            // if문을 이용하여 점수가 0미만, 100이상이면 alert창을 띄우기
+            if(kor<0 || kor>100){
+                alert('국어점수가 이상합니다.');
+                // 새로고침
+                location.reload();
+            }else if(eng<0 || eng>100){
+                alert('영어점수가 이상합니다.');
+                location.reload();
+
+            }else if(math<0 || math>100){
+                alert('수학점수가 이상합니다.');
+                location.reload();
+            }
+
+
+            let result;
+            // if (avg >= 90) {
+            //     result = 'A등급';
+            // } else if (avg >= 80) {
+            //     result = 'B등급';
+            // } else if (avg >= 70) {
+            //     result = 'C등급';
+            // } else {
+            //     result = 'D등급';
+            // }
+            if(avg>=60){
+                result = 'Pass';
+            }else{
+                result = 'fail';
+            }
+
+            let ol = document.getElementById('ol');
+            let str = `<li>이름 : ${name}</li><li>국어점수 : ${kor}</li><li>영어점수 : ${eng}</li><li>수학점수 : ${math}</li>
+                <li>합계 : ${sum}</li><li>평균 : ${avg}</li><li>합격여부 : ${result}</li>`;
+            ol.innerHTML = str;
+        }
+
+    </script>
+
+</body>
+
+</html>

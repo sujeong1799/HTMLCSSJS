@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name = '빵주';
+
+        function callName(herName){
+            let hisName = '채밤비';
+            console.log(`봉구의 이름은`, herName);
+            console.log(`밤비의 이름은`, hisName);
+            console.log(`밤비의 다른 이름`, name);
+        }
+
+        callName(`채봉구`);
+        callName(name);
+        // console.log(hisName); // 함수 내부에서 선언된 변수는 기본적으로 외부에서 사용 불가능
+
+
+        let name2 = '홍길동';
+        let favor = '축구';
+
+        function info(name2, favor){
+            console.log(name2,`은`, favor,`를 좋아합니다`);
+        }
+        info(name2, favor);
+
+        function info2(name3, favor1){
+            console.log(`${name3}은 ${favor1}를 좋아합니다`);
+        }
+        info2('홍홍홍', '야구');
+
+        function iKnowHer(herName, favor){
+            callName(herName);
+            info2(herName,favor);
+            console.log(`나는 그에 대해서 잘 알고 있어요.`);
+        }
+        iKnowHer('채봉구','축구')
+    </script>
+
+    <script>
+        function returnFunc(num1, num2){
+            let result = num1 + num2;
+            return result;
+        }
+        let result = returnFunc(10, 20);
+        console.log(result);
+
+        console.log(`result : ${returnFunc(5,10)}`);
+
+        function returnFunc2(num1, num2){
+            let result2 = num1 - num2;
+            return result2;
+        }
+        let result2 = returnFunc2(20,10);
+        console.log(result2);
+
+        function myFunc(name){
+            console.log(`나를 불렀니?`);
+            return 'Hello~!!' + name;
+        }
+        console.log(myFunc('홍길동'));
+        console.log(`------------`);
+
+        // ES5부터 가능한 방식
+        const myFun = function (myName){
+            console.log(`나를 불렀니?`);
+            return `Hello~!!` + myName;
+        }
+        myFun('홍길순');
+        console.log(myFun('홍길순'));
+    </script>
+
+    <script>
+        const arrowFunc= (param1, param2) => {
+            //스크립트 코드 작성
+            let result = param1 + param2;
+            return result;
+        }
+
+        const arrowFunc2 = (p1, p2) => p1 + p2;
+
+        const arrowFunc3 = (a, b) => {
+            console.log(`리턴 없음!`, a+b);
+        }
+
+        let result1 = arrowFunc(10,20);
+        console.log(result1);
+        console.log(arrowFunc2(5,3));
+        arrowFunc3(5,7);
+
+    </script>
+</body>
+</html>

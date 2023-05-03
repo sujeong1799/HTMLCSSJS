@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나이구하기
+
+    </title>
+</head>
+
+<body>
+    이름 : <input type="text" id="name"><br>
+    주민번호 : <input type="text" id="rNum"><br>
+    <button type="button" onclick="info();">확인</button>
+    <h3 id="result">
+        <!-- 이름, 생년월일, 성별, 나이 -->
+    </h3>
+
+    <script>
+
+        function info() {
+
+            let name = document.getElementById('name').value;
+            let rNum = document.getElementById('rNum').value;
+            let now = new Date(); // 오늘날짜
+            let year = now.getFullYear(); // 년도만
+
+            let birth = rNum.substr(0, rNum.indexOf('-')); // 생년월일
+            let num = birth.slice(0, 2); //년도 앞에 생년만
+
+            num = parseInt(num);  // 형변환
+            year = parseInt(year); // 형변환
+
+            console.log(num);
+
+            // 나이구하기
+            let age =
+                (rNum.charAt(rNum.indexOf('-') + 1) == 1 || (rNum.indexOf('-') + 1) == 2) ? year - (num + 1900) : year - (num + 2000);
+
+            //성별구하기
+            let gen =
+                (rNum.charAt(rNum.indexOf('-') + 1) % 2 == 1) ? '남자' : '여자';
+
+            document.getElementById('result').innerText =
+                `이름 : ${name} 생년월일 : ${birth} 성별 : ${gen} 나이 : ${age}`;
+        }
+
+
+    </script>
+
+    <script>
+        //오늘날짜 반환
+        let now = new Date();
+        console.log(now);
+        console.log(now.getFullYear()); //오늘날짜의 년도
+        console.log(now.getMonth() + 1); // 0~11월 +1
+        console.log(now.getDate()); //일을 반환  1~31
+        console.log(now.getDay()); //요일반환 0(일)~6(토)
+        //getHours() / getMinutes() / getSeconds()
+        let today = now.toLocaleDateString(); //현재 날짜형태로 변환
+        console.log(today);
+        let time = now.toLocaleTimeString(); // 현재시간
+        console.log(time);
+        let datetime = now.toLocaleString(); // 현재 날짜 / 시간
+        console.log(datetime);
+    </script>
+</body>
+
+</html>

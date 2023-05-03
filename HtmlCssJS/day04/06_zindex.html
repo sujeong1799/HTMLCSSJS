@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-index 속성</title>
+    <style>
+        body{
+            position: relative;
+        }
+        .box{
+            width: 100px;
+            height: 200px;
+            /* absolute 안주면 일자로 주르륵나옴  */
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border: 1px solid black;
+            background-color: rgb(251, 255, 184);
+
+        }   
+
+        .box1{
+            /* 숫자에 의미는 없음 젤 큰게 젤 앞으로 나옴 */
+            z-index: 4;
+        }
+        .box2{
+            top: 15px;
+            left: 15px;
+            z-index: 3;
+        }
+        .box3{
+            top: 30px;
+            left: 30px;
+            z-index: 2;
+        }
+        .box4{
+            top: 45px;
+            left: 45px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+</body>
+</html>

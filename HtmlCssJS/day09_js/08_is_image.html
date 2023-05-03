@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .green{
+            color : green;
+        }
+
+        .red{
+            color : red;
+        }
+    </style>
+</head>
+<body>
+    파일명 : <input type="text" id="fileName">
+    <button type="button" id="subBtn">전송</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        document.getElementById('subBtn').addEventListener('click', function(){
+            
+            let fileName = document.getElementById('fileName').value;
+            let imgTrue = `<span class="green"> 정상 파일 입니다. </span>`;
+            let imgFalse = `<span class = "red"> 이미지 파일만 가능합니다. </span>`;
+            document.getElementById('result').innerHTML = 
+            imageFileValid(fileName) ? imgTrue : imgFalse;
+
+        })
+        
+        function imageFileValid(image){
+            let imageFileName = image.toLowerCase(); // 소문자로 변환
+
+            return imageFileName.endsWith('png') ? true
+            : imageFileName.endsWith('jpg') ? true
+            : imageFileName.endsWith('jpeg') ? true
+            : imageFileName.endsWith('gif') ? true : false;
+        }
+
+
+    </script>
+</body>
+</html>

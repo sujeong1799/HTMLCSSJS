@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lotto 생성</title>
+</head>
+<body>
+    <!-- 
+        1~45까지의 중복되지 않는 숫자 6개를 랜덤으로 추출  => 출력 
+        set 객체를 사용하여 생성
+        당첨번호 : 자동생성
+        내 번호 : 자동생성
+    -->
+    <button type="button" onclick="userNum();">랜덤번호 6개 생성(출력)</button>
+    <h1 id="printNum">
+    </h1>
+    <button type="button" onclick="random();">당첨번호 7개(마지막번호는 보너스번호)</button>
+    <h1 id="printNum2">
+    </h1>
+    <button type="button" onclick="rank();">결과 확인</button>
+
+    <h1 id="printResult">
+    </h1>
+    <button type="button" onclick="window.location.reload();"">다시시도</button>
+    
+    <script>
+        const lotto = new Set();
+        const myNum = new Set();
+        let bNum = [];
+        let str = '';
+        let str2 = '';
+        let str3 = '';
+        let count = 0;
+        let lastNum = false;
+        const printNum = document.getElementById('printNum');
+        const printNum2 = document.getElementById('printNum2');
+        const printNum3 = document.getElementById('printResult');
+
+        // 나의 랜덤번호
+        function userNum() {
+            while (myNum.size < 6) {
+                let num = Math.floor(Math.random() * 45) + 1;
+                myNum.add(num);
+            }
+            myNum.forEach(function (value) {
+                str += `${value}번 `;
+            })
+            printNum.innerHTML = `행운의번호 : ${str}`;
+        }
+
+        //당첨번호
+        function random() {
+            while (lotto.size < 7) {
+                let num = Math.floor(Math.random() * 45) + 1;
+                lotto.add(num);
+            }
+
+            // 출력/ set > 배열  위한.. forEach
+            lotto.forEach(function (value) {
+                str2 += `${value}번 `;
+                bNum.push(value);     
+            })
+
+            // 마지막 번호 추출
+            bonusNum = bNum.pop();
+
+            // lotto에서 마지막번호 삭제
+            lotto.delete(bonusNum);
+
+            printNum2.innerHTML = `당첨번호 : ${str2}`;
+        }
+
+        // 결과 확인
+        function rank() {
+                        
+            // 로또 숫자 체크
+            for (const a of myNum.values()) {
+                if (lotto.has(a))
+                count++;
+            }
+
+            // 보너스 숫자 체크
+            console.log(lotto);
+            for (const a of myNum.values()) {
+                if (a == bonusNum) {
+                    lastNum = true;
+                }
+            }
+
+            // 등수
+            if (count == 6) {
+                str3 = `1등입니다.`;
+            } else if (count == 5 && lastNum == true) {
+                str3 = `2등입니다.`;
+            } else if (count == 5 && lastNum == false) {
+                str3 = `3등입니다.`;
+            } else if (count == 4) {
+                str3 = `4등입니다.`;
+            } else if (count == 3) {
+                str3 = `5등입니다.`;
+            } else {
+                str3 = `꽝입니다.`;
+            }
+            printNum3.innerHTML = `${str3}  일치하는 숫자 : ${count}개 `;
+        }
+
+    </script>
+</body>
+</html>

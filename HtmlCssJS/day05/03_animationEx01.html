@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            position: relative;
+        }
+        @keyframes box1 {
+            from {
+                /* position을 쓰면 left로 쓰면 됨
+                position을 안쓴다? 그럼 margin-left을 쓰면 된다. */
+                left: 0%;
+            }
+
+            50%{
+               left: 90%;
+               background-color: blue;
+            }
+
+            to {
+                left: 0%;
+            }
+
+        }
+
+        .box {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+
+            background-color: pink;
+            animation-name: box1;
+            animation-duration: 5s;
+            animation-iteration-count: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+</body>
+
+</html>

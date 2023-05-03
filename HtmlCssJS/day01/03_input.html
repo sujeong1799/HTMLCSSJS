@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input tag</title>
+</head>
+<body>
+    <!-- 쌍태크 : 닫는 태그가 있다. 단독태그 : 닫는 태그가 없다. -->
+    <!-- input tag는 단일 태그로 여러가지 다양한 기능에 활용할 수 있음  
+        type 속성에 따라 여러가지 기능으로 사용된다.
+        <input type="속성명">
+        <form> 태그와 같이 사용한다. </form>  form -> 데이터를 다른 위치로 보낼때 쓰는데 input이랑 같이 씀
+    -->
+    <!-- type = "txt" : 가장 많이 사용, 영문, 한글, 특수문자등의 문자를 입력할 때 사용
+        placeholder : 흐리게 표시 -->
+        아이디 : <input type="text" > 
+        비밀번호 : <input type="text" placeholder="입력"> <br>
+        
+        <!-- type = "button" : 일반버튼 => 3가지 형식으로 지원 -->
+        <!-- type = "submit" : 전송버튼 => 서버로 전송 => 로그인, 회원가입 버튼에서 많이 사용  -->
+        <!-- type = "reset" : 취소버튼 => (입력한거)취소 -->
+        <form action="">
+            <input type="text" name="data">
+            <input type="text" name="datapass">
+            <input type="button" value="button">
+            <input type="submit" value="submit">  <!-- (해당하는 데이터들이 지정위치로 간다...) -->
+            <input type="reset" value="reset">
+        </form>
+        <!-- http://127.0.0.1:5500/day01/03_input.html?data=1234&datapass=1111 -->
+
+        <!-- type = "password" : 비밀번호에 사용 -->
+        <hr>
+        <input type="password">
+
+        <!-- type="checkbox" : 다중선택을 이용할 경우 사용 체크,해제가능-->
+        <!-- type="radio" : 여러개 중 하나만 선택할 경우 가능 체크만 가능 -->
+        <input type="checkbox">
+        <input type="radio">
+
+        <hr>
+        <form action="">
+            <p>좋아하는 과일은? (복수 선택 가능)</p>
+            <input type="checkbox" name="fruit" value="apple"> 사과
+            <input type="checkbox" name="fruit" value="orange"> 오렌지
+            <input type="checkbox" name="fruit" value="banana"> 바나나
+            <input type="submit" value="전송">
+            <!-- name -> 변수 apple -> 값 -->
+
+            <!-- 체크 후 전송을 누르면 주소가 달라짐 
+               http://127.0.0.1:5500/day01/03_input.html?fruit=apple&fruit=orange
+            get 방식? -->
+            <!-- apple 체크 후 전송을 누르면 apple을 fruit에 담아서 전송해준다는 의미 -->
+
+        </form>
+
+        <!-- form 태그에서 데이터를 보내는 방식 -->
+        <!-- label 동기화 시켜줌 사과 글씨를 눌러도 체크가 가능하다. -->
+        <hr>
+        <form action="">
+            <p>좋아하는 과일은? (복수 선택 가능)</p>
+            <label for="apple">사과</label>
+            <input type="checkbox" name="fruit" value="apple" id="apple"> 
+            <label for="orange">오렌지
+             <input type="checkbox" name="fruit" value="orange" id="orange">
+            </label>
+            <label for="banana">바나나
+                <input type="checkbox" name="fruit" value="banana" id="banana">
+            </label>
+            <input type="submit" value="전송"> 
+        </form>
+
+        <hr>
+        <!-- type="color" : 색을 선택할 때 사용, 색상정보를 16진수로 표한-->
+        <form action="">
+            <input type="color" name="color">
+            <input type="submit" value="제출">
+        </form>
+
+        <hr>
+        <!-- 
+            type="month" : 년 월
+            type="week" : 년 주
+            type="date" : 년 월 일
+            type="datetime-local" : 년 월 일 시 분 초 표시
+            type="time" : 시 분 초 표시
+            
+            실무에서는 jquery에서 제공하는 datepicker 또는
+            부트스트랩에서 제공하는 datepicker 를 이용한다.
+         -->
+         <input type="month">
+         <input type="week">
+         <input type="date">
+         <input type="datetime">
+         <input type="datetime-local">
+         <input type="time">
+
+        <hr>
+         <!-- type="email" : 이메일 형식인지 아닌지 체크 -->
+         <!-- type="url" : url 형식인지 아닌지 체크 -->
+        <form action="">
+         <input type="email" name="email" id="" placeholder="이메일 입력">
+         <input type="url" name="url" id="" placeholder="url 입력">
+         <input type="submit" name = "" id = "" value="전송">
+
+        </form>
+
+        <hr>
+        <!-- type="file" : 첨부파일 선택 -->
+        <input type="file" name="" id="">
+
+        <!-- type="hidden" : 숨김속성, 값을 안보이게 숨김 실제 백엔드에서 많이 사용 -->
+        <input type="hidden" name="" id="" value="숨김속성">
+
+        <hr>
+        <!-- type="image" : img태그와 동일, 이미지를 추가하는 역할
+                src ="주소",  alt="이미지가 없을 때 보여질 문자"
+
+        -->
+        
+        <input type="image" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAyMTZfODMg%2FMDAxNjc2NTU1ODA2MjM1.EaP5Ee85n3CrwyTG5lAbRCeDoiTu7vYCVy7j30-V0o0g.FOkx-7LBCPiZp_abB_oQOW1wNZSOV1qpc0skpxfLvikg.JPEG.makmoa%2Foutput_84744830.jpg&type=sc960_832">
+        <input type="image" src="/image/민지1.jpg" alt="민지없음">
+        <input type="image" src="/image/민지2-2.jpg" alt="민지 없음">
+        <hr>
+        <!-- type="number" : 숫자만 입력 가능한 창 수량, 개수 나타낼때 씀-->
+        <input type="number" name="" id="">
+
+        <!-- type="range" : 상태바를 보여줌 -->
+        좋아요 <input type="range"> 많이 좋아요
+
+        <hr>
+        <!-- type="radio" 를 이용하여 스위치 만들기 -->
+        <form action="">
+        <p>최애를 선택해 주세요 (복수 선택 X)</p>
+        <label for="minji"> 민지
+         <input type="radio" name="newjeans" id="minji" value="minji">
+        </label>
+        <label for="hani"> 하니
+         <input type="radio" name="newjeans" id="hani" value="hani">
+        </label>
+        <input type="submit" value="전송">
+        <br>
+        <br>
+        <input type="image" src="/image/민지2.jpg">
+        <input type="image" src="/image/하니1.jpg">
+        </form>
+
+        <br>
+
+        <form action="">
+        <label for="on">on
+            <input type="radio" name="power" id="on" value="on">
+        </label>
+        <label for="off">off
+            <input type="radio" name="power" id="off" value="off">
+        </label>
+            <input type="submit" value="전송">
+        </form>
+        <br> <br> <br> <br> <br>
+</body>
+</html>

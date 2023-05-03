@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> 구구단 영역 2*1=1 ~ 9</h1>
+
+    <button type="button" onclick="first();">문제출제</button>
+
+    <ol id="a"></ol>
+
+    <button type="button">정답확인</button>
+    <h3 id="printAll">
+
+    </h3>
+
+    <script>
+
+        function randomDan() {
+            return Math.floor(Math.random() * 8) + 2; // 2~9단
+        }
+
+        function randomIncre() {
+            return Math.floor(Math.random() * 9) + 1;
+        }
+
+        let count = 0;
+        let printQ = document.getElementById('a');
+        const result = {};
+
+        function first() {
+            let str = "";
+            for (let i = 1; i <= 10; i++) {
+                count++;
+                str += `<li> ${randomDan()} * ${randomIncre()} = <input type="text" id="userAns${count}"></li>`;
+            }
+            console.log(printQ);
+
+            printQ.innerHTML = `${str}`;
+
+        }
+        
+
+        // 정답확인 
+        let count2 = 0;
+        let correct = 0; // 정답?
+            console.log(randomDan())
+        correct = `${randomDan*randomIncre}`;
+            console.log(correct);
+        function resultCheck(){
+
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

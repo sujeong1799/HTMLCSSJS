@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button type="button" id="btnStart">게임시작</button>
+  <h1 id="result"></h1>
+  예상 정답 <input type="text" id="input">
+  <button type="button" id="btnResult">정답확인</button>
+  <ol id="ol"></ol>
+
+  <script>
+    const randomNum = new Set();
+    const comNum = [];
+    const userNum = [];
+    let count = 0;
+    let str = '';
+
+
+    //랜덤 숫자 생성
+    document.getElementById('btnStart').addEventListener('click', randomCom);
+    document.getElementById('btnResult').addEventListener('click', checkNum);
+    // 1~9사이의 랜덤 숫자 생성
+    function randomCom() {
+      randomNum.clear();
+      input.value = "";
+      let num = 0;
+      while (randomNum.size < 3) {
+        num = Math.floor(Math.random() * 9) + 1;
+        randomNum.add(num);
+      }
+      document.getElementById('result').innerHTML =
+        `컴퓨터가 랜덤 숫자를 생성했습니다. <br> 정답을 맞춰주세요`;
+      console.log(randomNum);
+      randomNum.forEach(function (a) {
+        comNum.push(a);
+      })
+      console.log(comNum);
+      document.getElementById('ol').innerHTML = '';
+    }
+
+    function checkNum() {
+      let input = document.getElementById('input').value;
+      let myNum = input.split("");
+      let strike = 0;
+      let ball = 0;
+      console.log(myNum);
+
+
+      for (let i = 0; i < comNum.length; i++) {
+        for (let j = 0; j < myNum.length; j++) {
+          if (comNum[i] == myNum[j]) {
+            if (i == j) {
+              strike++;
+            } else {
+              ball++;
+            }
+          }
+        }
+      } //for문 종료      
+
+
+      if (strike == 0 && ball == 0) {
+        str += `<li> ${myNum} - out입니다! </li>`;
+      } else {
+        str += `<li>${myNum} - ${strike} 스트라이크, ${ball} 볼  </li>`;
+      }
+
+      if (strike == 3) {
+        document.getElementById('result').innerHTML = ` ${myNum} 정답입니다! `;
+      }
+      document.getElementById('ol').innerHTML = str;
+    }
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
